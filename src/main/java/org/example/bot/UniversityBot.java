@@ -5,23 +5,25 @@ import org.example.parseObjects.SubjectEnum;
 import org.example.parseObjects.Specialty;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.*;
 
-
 public class UniversityBot extends TelegramLongPollingBot {
+
     private final Map<Long, List<String>> userSubjects = new HashMap<>(); // Выбранные предметы
     private final Map<Long, Map<String, Integer>> userScores = new HashMap<>(); // Баллы по предметам
     private final Map<Long, String> userQuotas = new HashMap<>(); // Выбранная квота
-
+    private final Map<Long, Integer> userMessageId = new HashMap<>(); // Хранилище ID сообщений
     private final List<Specialty> specialties; // Список специальностей
-
-    private final List<GroupCode> groupCodes;
-    private final Map<Long, List<String>> userPreferredGroups = new HashMap<>();
+    private final List<GroupCode> groupCodes; // Список групп
+    private final Map<Long, List<String>> userPreferredGroups = new HashMap<>(); // Выбранные группы
 
     public UniversityBot(List<Specialty> specialties, List<GroupCode> groupCodes) {
         this.specialties = specialties;
@@ -37,80 +39,136 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
     }
 
+    private void handleScoreInput(Long userId, String text, Integer messageId) {
+        try {
+            int score = Integer.parseInt(text.trim()); // Преобразуем текст в число
+            List<String> subjects = userSubjects.get(userId);
+            if (subjects == null || subjects.isEmpty()) {
+                sendMessage(userId, "Сначала выберите предметы.");
+                return;
+            }
+
+            String currentSubject = subjects.remove(0); // Удаляем текущий предмет из списка
+            userScores.computeIfAbsent(userId, k -> new HashMap<>()).put(currentSubject, score);
+
+            if (subjects.isEmpty()) {
+                // Если все предметы обработаны, переходим к выбору групп
+                sendMessage(userId, "Баллы успешно сохранены! Теперь выберите группы.");
+                sendGroupSelectionMessage(userId);
+            } else {
+                // Запрашиваем баллы для следующего предмета
+                sendMessage(userId, "Введите баллы для предмета: " + subjects.get(0));
+            }
+        } catch (NumberFormatException e) {
+            sendMessage(userId, "Пожалуйста, введите корректное число.");
+        }
+    }
+
+
+    private void updateMessage(Long chatId, String text, Integer messageId) {
+        EditMessageText editMessageText = new EditMessageText();
+        editMessageText.setChatId(chatId.toString());
+        editMessageText.setMessageId(messageId);
+        editMessageText.setText(text);
+
+        try {
+            execute(editMessageText);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void handleText(Update update) {
         Long userId = update.getMessage().getChatId();
         String text = update.getMessage().getText();
+        Integer messageId = update.getMessage().getMessageId(); // Получение ID сообщения
 
         if (text.equals("/start")) {
             sendQuotaSelectionMessage(userId);
         } else if (userSubjects.containsKey(userId)) {
-            handleScoreInput(userId, text);
+            handleScoreInput(userId, text, messageId); // Передаем ID сообщения
         } else {
             sendMessage(userId, "Нажмите /start для начала.");
         }
     }
 
+
+
     private void handleCallback(CallbackQuery callbackQuery) {
         Long userId = callbackQuery.getMessage().getChatId();
+        Integer messageId = callbackQuery.getMessage().getMessageId();
         String data = callbackQuery.getData();
 
         if (data.startsWith("QUOTA_")) {
-            String quota = data.substring(6);
-            userQuotas.put(userId, quota);
-            sendSubjectSelectionMessage(userId);
-        } else if (data.equals("DONE")) {
-            if (userSubjects.containsKey(userId) && !userSubjects.get(userId).isEmpty()) {
-                askForScore(userId);
+            // Обработка выбора квоты
+            String quota = data.substring(6); // Убираем префикс "QUOTA_"
+            userQuotas.put(userId, quota); // Сохраняем выбранную квоту
+            sendSubjectSelectionMessage(userId, messageId); // Переходим к выбору предметов
+        } else if (data.startsWith("SUBJECT_")) {
+            // Обработка выбора предмета
+            String subject = data.substring(8); // Убираем префикс "SUBJECT_"
+            List<String> selectedSubjects = userSubjects.computeIfAbsent(userId, k -> new ArrayList<>());
+
+            if (selectedSubjects.contains(subject)) {
+                selectedSubjects.remove(subject); // Убираем предмет, если он уже выбран
             } else {
-                sendMessage(userId, "Выберите хотя бы один предмет.");
+                selectedSubjects.add(subject); // Добавляем предмет, если он не выбран
             }
-        } else if (data.equals("RESET")) {
-            userSubjects.remove(userId);
-            userScores.remove(userId);
-            userQuotas.remove(userId);
-            userPreferredGroups.remove(userId);
-            sendQuotaSelectionMessage(userId);
-        } else if (data.equals("DONE_GROUPS")) {
-            sendResult(userId);
+
+            // Обновляем кнопки в одном сообщении
+            sendSubjectSelectionMessage(userId, messageId);
+        } else if (data.equals("DONE_SUBJECTS")) {
+            // Завершение выбора предметов
+            if (userSubjects.containsKey(userId) && !userSubjects.get(userId).isEmpty()) {
+                askForScore(userId); // Переход к вводу баллов
+            } else {
+                sendMessage(userId, "Пожалуйста, выберите хотя бы один предмет.");
+            }
         } else if (data.startsWith("GROUP_")) {
             String groupCode = data.substring(6);
-            userPreferredGroups.computeIfAbsent(userId, k -> new ArrayList<>()).add(groupCode);
-            sendGroupSelectionMessage(userId); // Обновить сообщение с выбранными группами
-        } else if (Arrays.stream(SubjectEnum.values()).anyMatch(subject -> subject.name().equals(data))) {
-            userSubjects.computeIfAbsent(userId, k -> new ArrayList<>()).add(data);
-            sendSubjectSelectionMessage(userId, "Вы выбрали: " + data);
-        } else {
-            sendMessage(userId, "Неверный выбор. Пожалуйста, попробуйте еще раз.");
+            List<String> selectedGroups = userPreferredGroups.computeIfAbsent(userId, k -> new ArrayList<>());
+
+            if (selectedGroups.contains(groupCode)) {
+                selectedGroups.remove(groupCode); // Убираем группу
+            } else {
+                selectedGroups.add(groupCode); // Добавляем группу
+            }
+
+            // Обновляем сообщение с формой выбора групп
+            sendGroupSelectionMessage(userId);
+        } else if (data.equals("DONE_GROUPS")) {
+            // Завершение выбора групп
+            sendAvailableSpecialties(userId);
+        }
+
+        else if (data.equals("RESET")) {
+            // Сброс всех данных
+            resetUserData(userId);
+            sendQuotaSelectionMessage(userId);
         }
     }
 
 
-
-
-
-    private void sendGroupSelectionMessage(Long userId) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(userId);
-        sendMessage.setText("Выберите предпочтительные группы специальностей:");
-
+    private InlineKeyboardMarkup generateGroupSelectionKeyboard(Long userId) {
         List<String> selectedGroups = userPreferredGroups.getOrDefault(userId, new ArrayList<>());
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 
         for (GroupCode group : groupCodes) {
-            // Исключаем уже выбранные группы
-            if (!selectedGroups.contains(group.getCode())) {
-                buttons.add(Collections.singletonList(
-                        InlineKeyboardButton.builder()
-                                .text(group.getName())
-                                .callbackData("GROUP_" + group.getCode())
-                                .build()
-                ));
-            }
+            String buttonText = selectedGroups.contains(group.getCode())
+                    ? "✅ " + group.getName()
+                    : "☑️ " + group.getName();
+            buttons.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text(buttonText)
+                            .callbackData("GROUP_" + group.getCode())
+                            .build()
+            ));
         }
 
-        // Кнопка завершения выбора
+        // Добавляем кнопку "Готово"
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
                         .text("✅ Готово")
@@ -119,14 +177,46 @@ public class UniversityBot extends TelegramLongPollingBot {
         ));
 
         keyboard.setKeyboard(buttons);
-        sendMessage.setReplyMarkup(keyboard);
+        return keyboard;
+    }
 
-        try {
-            execute(sendMessage);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+
+    private void sendGroupSelectionMessage(Long userId) {
+        InlineKeyboardMarkup keyboard = generateGroupSelectionKeyboard(userId);
+
+        // Если сообщение уже создано, обновляем его
+        if (userMessageId.containsKey(userId)) {
+            Integer messageId = userMessageId.get(userId);
+            try {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(userId.toString());
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(keyboard);
+                execute(editMessageReplyMarkup);
+            } catch (Exception e) {
+                e.printStackTrace();
+                sendMessage(userId, "Ошибка при обновлении формы выбора групп.");
+            }
+        } else {
+            // Создаем новое сообщение и сохраняем его ID
+            SendMessage newMessage = new SendMessage();
+            newMessage.setChatId(userId);
+            newMessage.setText("Выберите предпочтительные группы специальностей:");
+            newMessage.setReplyMarkup(keyboard);
+            try {
+                Message message = execute(newMessage);
+                userMessageId.put(userId, message.getMessageId()); // Сохраняем ID нового сообщения
+            } catch (Exception e) {
+                e.printStackTrace();
+                sendMessage(userId, "Ошибка при отображении формы выбора групп.");
+            }
         }
     }
+
+
+
+
 
 
 
@@ -162,32 +252,90 @@ public class UniversityBot extends TelegramLongPollingBot {
     }
 
 
-    private void sendSubjectSelectionMessage(Long chatId) {
-        sendSubjectSelectionMessage(chatId, "Выберите предметы (нажмите 'Готово' для завершения):");
-    }
-
-    private void sendSubjectSelectionMessage(Long chatId, String message) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText(message);
+    private void sendSubjectSelectionMessage(Long chatId, Integer messageId) {
+        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+        editMessageReplyMarkup.setChatId(chatId.toString());
+        editMessageReplyMarkup.setMessageId(messageId);
 
         List<String> selectedSubjects = userSubjects.getOrDefault(chatId, new ArrayList<>());
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
         for (SubjectEnum subject : SubjectEnum.values()) {
-            if (!selectedSubjects.contains(subject.name())) {
-                buttons.add(Collections.singletonList(
-                        InlineKeyboardButton.builder().text(subject.getDescription()).callbackData(subject.name()).build()
-                ));
-            }
+            String buttonText = selectedSubjects.contains(subject.name())
+                    ? "✅ " + subject.getDescription()
+                    : "☑️ " + subject.getDescription();
+            buttons.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text(buttonText)
+                            .callbackData("SUBJECT_" + subject.name())
+                            .build()
+            ));
         }
+
         buttons.add(Collections.singletonList(
-                InlineKeyboardButton.builder().text("Готово").callbackData("DONE").build()
+                InlineKeyboardButton.builder()
+                        .text("✅ Готово")
+                        .callbackData("DONE_SUBJECTS")
+                        .build()
         ));
 
         keyboard.setKeyboard(buttons);
-        sendMessage.setReplyMarkup(keyboard);
+        editMessageReplyMarkup.setReplyMarkup(keyboard);
+
+        try {
+            execute(editMessageReplyMarkup);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private InlineKeyboardMarkup generateSubjectSelectionKeyboard(Long chatId) {
+        List<String> selectedSubjects = userSubjects.getOrDefault(chatId, new ArrayList<>());
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+        for (SubjectEnum subject : SubjectEnum.values()) {
+            String buttonText = selectedSubjects.contains(subject.name())
+                    ? "✅ " + subject.getDescription()
+                    : "☑️ " + subject.getDescription();
+            buttons.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text(buttonText)
+                            .callbackData("SUBJECT_" + subject.name())
+                            .build()
+            ));
+        }
+
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("✅ Готово")
+                        .callbackData("DONE_SUBJECTS")
+                        .build()
+        ));
+
+        keyboard.setKeyboard(buttons);
+        return keyboard;
+    }
+
+    private void askForScore(Long userId) {
+        String nextSubject = userSubjects.get(userId).get(0);
+        sendMessage(userId, "Введите баллы для предмета: " + nextSubject);
+    }
+
+    private void resetUserData(Long userId) {
+        userSubjects.remove(userId);
+        userScores.remove(userId);
+        userQuotas.remove(userId);
+    }
+
+    private void sendMessage(Long chatId, String text) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(text);
 
         try {
             execute(sendMessage);
@@ -196,45 +344,29 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
     }
 
-
-    private void handleScoreInput(Long userId, String text) {
-        String currentSubject = userSubjects.get(userId).get(0);
-        try {
-            int score = Integer.parseInt(text.trim());
-            userScores.computeIfAbsent(userId, k -> new HashMap<>()).put(currentSubject, score);
-            userSubjects.get(userId).remove(0);
-
-            if (userSubjects.get(userId).isEmpty()) {
-                // После завершения ввода баллов открываем окно выбора групп
-                sendGroupSelectionMessage(userId);
-            } else {
-                askForScore(userId);
-            }
-        } catch (NumberFormatException e) {
-            sendMessage(userId, "Введите корректный балл (число).");
-        }
-    }
-
-
-    private void askForScore(Long userId) {
-        String nextSubject = userSubjects.get(userId).get(0);
-        sendMessage(userId, "Введите баллы для предмета: " + nextSubject);
-    }
-
-    private void sendResult(Long userId) {
+    private void sendAvailableSpecialties(Long userId) {
         String quota = userQuotas.get(userId);
+        Map<String, Integer> scores = userScores.get(userId);
+        List<String> preferredGroups = userPreferredGroups.getOrDefault(userId, new ArrayList<>());
+
         if (quota == null) {
             sendMessage(userId, "❗ Вы не выбрали квоту.");
+            sendRestartButton(userId);
             return;
         }
 
-        List<String> preferredGroups = userPreferredGroups.get(userId);
-        if (preferredGroups == null || preferredGroups.isEmpty()) {
+        if (scores == null || scores.isEmpty()) {
+            sendMessage(userId, "❗ Вы не ввели баллы.");
+            sendRestartButton(userId);
+            return;
+        }
+
+        if (preferredGroups.isEmpty()) {
             sendMessage(userId, "❗ Вы не выбрали предпочтительные группы.");
+            sendRestartButton(userId);
             return;
         }
 
-        Map<String, Integer> scores = userScores.get(userId);
         List<Specialty> availableSpecialties = new ArrayList<>();
         List<Specialty> unknownScoreSpecialties = new ArrayList<>();
 
@@ -255,8 +387,6 @@ public class UniversityBot extends TelegramLongPollingBot {
             }
         }
 
-
-        // Формируем результат
         StringBuilder result = new StringBuilder("📊 Ваши результаты:\n");
         scores.forEach((subject, score) ->
                 result.append("🔹 ").append(SubjectEnum.valueOf(subject).getDescription())
@@ -278,10 +408,30 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
 
         sendMessage(userId, result.toString());
-        sendRestartButton(userId);
-        resetUserData(userId);
+        sendRestartButton(userId); // Предлагаем начать заново
+        resetUserData(userId); // Сбрасываем данные пользователя
     }
 
+
+    private void sendRestartButton(Long userId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(userId);
+        message.setText("🔄 Хотите попробовать снова?");
+        message.enableMarkdown(true);
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> buttons = Collections.singletonList(
+                InlineKeyboardButton.builder().text("Начать заново").callbackData("RESET").build()
+        );
+        keyboard.setKeyboard(Collections.singletonList(buttons));
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private boolean isEligibleForSpecialty(Map<String, Integer> scores, Specialty specialty, Integer minScore) {
         int totalScore = 0;
@@ -313,7 +463,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
         return eligible && totalScore >= minScore;
     }
-
     private void appendSpecialtyList(StringBuilder builder, List<Specialty> specialties, String quota) {
         int counter = 1;
         for (Specialty specialty : specialties) {
@@ -336,66 +485,6 @@ public class UniversityBot extends TelegramLongPollingBot {
             builder.append(specialtyInfo);
         }
     }
-
-
-    private void resetUserData(Long userId) {
-        userSubjects.remove(userId);
-        userScores.remove(userId);
-        userQuotas.remove(userId);
-    }
-
-
-    private void sendRestartButton(Long userId) {
-        SendMessage message = new SendMessage();
-        message.setChatId(userId);
-        message.setText("🔄 Хотите попробовать снова?");
-        message.enableMarkdown(true);
-
-        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
-        List<InlineKeyboardButton> buttons = Collections.singletonList(
-                InlineKeyboardButton.builder().text("Начать заново").callbackData("RESET").build()
-        );
-        keyboard.setKeyboard(Collections.singletonList(buttons));
-        message.setReplyMarkup(keyboard);
-
-        try {
-            execute(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void sendMessage(Long chatId, String text) {
-        final int MAX_MESSAGE_LENGTH = 4096; // Максимальная длина сообщения в Telegram
-
-        try {
-            if (text.length() > MAX_MESSAGE_LENGTH) {
-                // Разбиваем сообщение на части
-                int start = 0;
-                while (start < text.length()) {
-                    int end = Math.min(start + MAX_MESSAGE_LENGTH, text.length());
-                    String part = text.substring(start, end);
-
-                    // Отправляем текущую часть сообщения
-                    SendMessage message = new SendMessage();
-                    message.setChatId(chatId);
-                    message.setText(part);
-                    execute(message);
-
-                    start = end;
-                }
-            } else {
-                // Отправляем сообщение целиком
-                SendMessage message = new SendMessage();
-                message.setChatId(chatId);
-                message.setText(text);
-                execute(message);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
     @Override
     public String getBotUsername() {
