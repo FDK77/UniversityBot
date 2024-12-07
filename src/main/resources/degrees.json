@@ -1,0 +1,4613 @@
+[
+    {
+        "id": 65937,
+        "specialty": "Прикладная математика и информатика",
+        "direction": "01.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 233,
+                "avg_score": 244
+            },
+            "Целевая квота": {
+                "min_score": 184,
+                "avg_score": 189
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": 191,
+                "avg_score": 197
+            }
+        }
+    },
+    {
+        "id": 65938,
+        "specialty": "Строительство",
+        "direction": "08.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 185,
+                "avg_score": 206
+            },
+            "Особая квота": {
+                "min_score": 176,
+                "avg_score": 176
+            },
+            "Целевая квота": {
+                "min_score": 171,
+                "avg_score": 193
+            },
+            "Отдельная квота": {
+                "min_score": 205,
+                "avg_score": 268
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65939,
+        "specialty": "Информатика и вычислительная техника",
+        "direction": "09.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 232,
+                "avg_score": 245
+            },
+            "Особая квота": {
+                "min_score": 243,
+                "avg_score": 243
+            },
+            "Целевая квота": {
+                "min_score": 149,
+                "avg_score": 208
+            },
+            "Отдельная квота": {
+                "min_score": 184,
+                "avg_score": 235
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65940,
+        "specialty": "Информационные системы и технологии",
+        "direction": "09.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 231,
+                "avg_score": 238
+            },
+            "Целевая квота": {
+                "min_score": 184,
+                "avg_score": 207
+            },
+            "Отдельная квота": {
+                "min_score": 232,
+                "avg_score": 232
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65941,
+        "specialty": "Прикладная информатика",
+        "direction": "09.03.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 235,
+                "avg_score": 245
+            },
+            "Особая квота": {
+                "min_score": 160,
+                "avg_score": 161
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65942,
+        "specialty": "Информационная безопасность",
+        "direction": "10.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 243,
+                "avg_score": 252
+            },
+            "Особая квота": {
+                "min_score": 147,
+                "avg_score": 179
+            },
+            "Целевая квота": {
+                "min_score": 161,
+                "avg_score": 210
+            },
+            "Отдельная квота": {
+                "min_score": 171,
+                "avg_score": 183
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65943,
+        "specialty": "Инфокоммуникационные технологии и системы связи",
+        "direction": "11.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 211,
+                "avg_score": 223
+            },
+            "Особая квота": {
+                "min_score": 148,
+                "avg_score": 148
+            },
+            "Целевая квота": {
+                "min_score": 212,
+                "avg_score": 212
+            },
+            "Отдельная квота": {
+                "min_score": 134,
+                "avg_score": 134
+            },
+            "Места по договорам": {
+                "min_score": 217,
+                "avg_score": 217
+            }
+        }
+    },
+    {
+        "id": 65944,
+        "specialty": "Теплоэнергетика и теплотехника",
+        "direction": "13.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 168,
+                "avg_score": 185
+            },
+            "Целевая квота": {
+                "min_score": 173,
+                "avg_score": 197
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65945,
+        "specialty": "Мехатроника и робототехника",
+        "direction": "15.03.06",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 198,
+                "avg_score": 211
+            },
+            "Особая квота": {
+                "min_score": 136,
+                "avg_score": 172
+            },
+            "Целевая квота": {
+                "min_score": 146,
+                "avg_score": 178
+            },
+            "Отдельная квота": {
+                "min_score": 123,
+                "avg_score": 123
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65946,
+        "specialty": "Техносферная безопасность",
+        "direction": "20.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 138,
+                "avg_score": 173
+            },
+            "Особая квота": {
+                "min_score": 148,
+                "avg_score": 160
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65947,
+        "specialty": "Технология транспортных процессов",
+        "direction": "23.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 178,
+                "avg_score": 206
+            },
+            "Особая квота": {
+                "min_score": 141,
+                "avg_score": 172
+            },
+            "Целевая квота": {
+                "min_score": 131,
+                "avg_score": 177
+            },
+            "Отдельная квота": {
+                "min_score": 125,
+                "avg_score": 169
+            },
+            "Места по договорам": {
+                "min_score": 124,
+                "avg_score": 153
+            }
+        }
+    },
+    {
+        "id": 65948,
+        "specialty": "Наземные транспортно-технологические комплексы",
+        "direction": "23.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 180,
+                "avg_score": 209
+            },
+            "Целевая квота": {
+                "min_score": 208,
+                "avg_score": 208
+            },
+            "Отдельная квота": {
+                "min_score": 300,
+                "avg_score": 300
+            },
+            "Места по договорам": {
+                "min_score": 139,
+                "avg_score": 156
+            }
+        }
+    },
+    {
+        "id": 65949,
+        "specialty": "Аэронавигация",
+        "direction": "25.03.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 194,
+                "avg_score": 220
+            },
+            "Особая квота": {
+                "min_score": 238,
+                "avg_score": 238
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": 134,
+                "avg_score": 152
+            }
+        }
+    },
+    {
+        "id": 65950,
+        "specialty": "Управление водным транспортом и гидрографическое обеспечение судоходства",
+        "direction": "26.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 170,
+                "avg_score": 192
+            },
+            "Особая квота": {
+                "min_score": 152,
+                "avg_score": 152
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": 142,
+                "avg_score": 142
+            }
+        }
+    },
+    {
+        "id": 65951,
+        "specialty": "Водные пути, порты и гидротехнические сооружения",
+        "direction": "26.03.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 145,
+                "avg_score": 171
+            },
+            "Особая квота": {
+                "min_score": 140,
+                "avg_score": 140
+            },
+            "Отдельная квота": {
+                "min_score": 185,
+                "avg_score": 243
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65952,
+        "specialty": "Управление в технических системах",
+        "direction": "27.03.04",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 217,
+                "avg_score": 226
+            },
+            "Особая квота": {
+                "min_score": 166,
+                "avg_score": 166
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65953,
+        "specialty": "Экономика",
+        "direction": "38.03.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 259,
+                "avg_score": 266
+            },
+            "Особая квота": {
+                "min_score": 210,
+                "avg_score": 213
+            },
+            "Целевая квота": {
+                "min_score": 254,
+                "avg_score": 257
+            },
+            "Отдельная квота": {
+                "min_score": 176,
+                "avg_score": 205
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65954,
+        "specialty": "Экономика",
+        "direction": "38.03.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65955,
+        "specialty": "Менеджмент",
+        "direction": "38.03.02",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65956,
+        "specialty": "Управление персоналом",
+        "direction": "38.03.03",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": 135,
+                "avg_score": 173
+            }
+        }
+    },
+    {
+        "id": 65957,
+        "specialty": "Государственное и муниципальное управление",
+        "direction": "38.03.04",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65958,
+        "specialty": "Бизнес-информатика",
+        "direction": "38.03.05",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65959,
+        "specialty": "Бизнес-информатика",
+        "direction": "38.03.05",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65960,
+        "specialty": "Юриспруденция",
+        "direction": "40.03.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65961,
+        "specialty": "Международные отношения",
+        "direction": "41.03.05",
+        "subjects": "HISTORY, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65962,
+        "specialty": "Реклама и связи с общественностью",
+        "direction": "42.03.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/IT",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65964,
+        "specialty": "Лингвистика",
+        "direction": "45.03.02",
+        "subjects": "FOREIGN_LANGUAGE, RUSSIAN, HISTORY/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65965,
+        "specialty": "Электроэнергетика и электротехника",
+        "direction": "13.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65966,
+        "specialty": "Технология транспортных процессов",
+        "direction": "23.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65967,
+        "specialty": "Управление качеством",
+        "direction": "27.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65969,
+        "specialty": "Менеджмент",
+        "direction": "38.03.02",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65970,
+        "specialty": "Юриспруденция",
+        "direction": "40.03.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65971,
+        "specialty": "Строительство",
+        "direction": "08.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65972,
+        "specialty": "Прикладная информатика",
+        "direction": "09.03.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65973,
+        "specialty": "Инфокоммуникационные технологии и системы связи",
+        "direction": "11.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65974,
+        "specialty": "Теплоэнергетика и теплотехника",
+        "direction": "13.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65975,
+        "specialty": "Конструкторско-технологическое обеспечение машиностроительных производств",
+        "direction": "15.03.05",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65976,
+        "specialty": "Техносферная безопасность",
+        "direction": "20.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65977,
+        "specialty": "Технология транспортных процессов",
+        "direction": "23.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65978,
+        "specialty": "Экономика",
+        "direction": "38.03.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65979,
+        "specialty": "Менеджмент",
+        "direction": "38.03.02",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65980,
+        "specialty": "Управление персоналом",
+        "direction": "38.03.03",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65981,
+        "specialty": "Государственное и муниципальное управление",
+        "direction": "38.03.04",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65982,
+        "specialty": "Юриспруденция",
+        "direction": "40.03.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65984,
+        "specialty": "Строительство уникальных зданий и сооружений",
+        "direction": "08.05.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 202,
+                "avg_score": 215
+            },
+            "Особая квота": {
+                "min_score": 161,
+                "avg_score": 161
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65985,
+        "specialty": "Компьютерная безопасность",
+        "direction": "10.05.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 233,
+                "avg_score": 243
+            },
+            "Целевая квота": {
+                "min_score": 228,
+                "avg_score": 246
+            },
+            "Отдельная квота": {
+                "min_score": 220,
+                "avg_score": 234
+            },
+            "Места по договорам": {
+                "min_score": 197,
+                "avg_score": 221
+            }
+        }
+    },
+    {
+        "id": 65987,
+        "specialty": "Подвижной состав железных дорог",
+        "direction": "23.05.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 115,
+                "avg_score": 177
+            },
+            "Особая квота": {
+                "min_score": 146,
+                "avg_score": 176
+            },
+            "Целевая квота": {
+                "min_score": 107,
+                "avg_score": 169
+            },
+            "Отдельная квота": {
+                "min_score": 300,
+                "avg_score": 300
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65988,
+        "specialty": "Эксплуатация железных дорог",
+        "direction": "23.05.04",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 109,
+                "avg_score": 183
+            },
+            "Особая квота": {
+                "min_score": 160,
+                "avg_score": 160
+            },
+            "Целевая квота": {
+                "min_score": 111,
+                "avg_score": 170
+            },
+            "Отдельная квота": {
+                "min_score": 234,
+                "avg_score": 278
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65989,
+        "specialty": "Системы обеспечения движения поездов",
+        "direction": "23.05.05",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 113,
+                "avg_score": 166
+            },
+            "Особая квота": {
+                "min_score": 148,
+                "avg_score": 148
+            },
+            "Целевая квота": {
+                "min_score": 108,
+                "avg_score": 168
+            },
+            "Отдельная квота": {
+                "min_score": 162,
+                "avg_score": 162
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65990,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей",
+        "direction": "23.05.06",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 114,
+                "avg_score": 173
+            },
+            "Особая квота": {
+                "min_score": 114,
+                "avg_score": 178
+            },
+            "Целевая квота": {
+                "min_score": 122,
+                "avg_score": 167
+            },
+            "Отдельная квота": {
+                "min_score": 121,
+                "avg_score": 186
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65991,
+        "specialty": "Судовождение",
+        "direction": "26.05.05",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 155,
+                "avg_score": 194
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65992,
+        "specialty": "Эксплуатация судовых энергетических установок",
+        "direction": "26.05.06",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 113,
+                "avg_score": 154
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65993,
+        "specialty": "Эксплуатация судового электрооборудования и средств автоматики",
+        "direction": "26.05.07",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 115,
+                "avg_score": 165
+            },
+            "Отдельная квота": {
+                "min_score": 300,
+                "avg_score": 300
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65994,
+        "specialty": "Экономическая безопасность",
+        "direction": "38.05.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65995,
+        "specialty": "Таможенное дело",
+        "direction": "38.05.02",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65996,
+        "specialty": "Правовое обеспечение национальной безопасности",
+        "direction": "40.05.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65997,
+        "specialty": "Судебная экспертиза",
+        "direction": "40.05.03",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": 179,
+                "avg_score": 179
+            }
+        }
+    },
+    {
+        "id": 65998,
+        "specialty": "Подвижной состав железных дорог",
+        "direction": "23.05.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65999,
+        "specialty": "Таможенное дело",
+        "direction": "38.05.02",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66000,
+        "specialty": "Правовое обеспечение национальной безопасности",
+        "direction": "40.05.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66001,
+        "specialty": "Наземные транспортно-технологические средства",
+        "direction": "23.05.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 174,
+                "avg_score": 207
+            },
+            "Целевая квота": {
+                "min_score": 117,
+                "avg_score": 140
+            },
+            "Отдельная квота": {
+                "min_score": 113,
+                "avg_score": 113
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66002,
+        "specialty": "Подвижной состав железных дорог",
+        "direction": "23.05.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 135,
+                "avg_score": 169
+            },
+            "Особая квота": {
+                "min_score": 125,
+                "avg_score": 143
+            },
+            "Целевая квота": {
+                "min_score": 99,
+                "avg_score": 143
+            },
+            "Отдельная квота": {
+                "min_score": 111,
+                "avg_score": 143
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66003,
+        "specialty": "Эксплуатация железных дорог",
+        "direction": "23.05.04",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 134,
+                "avg_score": 177
+            },
+            "Особая квота": {
+                "min_score": 131,
+                "avg_score": 131
+            },
+            "Целевая квота": {
+                "min_score": 120,
+                "avg_score": 152
+            },
+            "Отдельная квота": {
+                "min_score": 136,
+                "avg_score": 218
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66004,
+        "specialty": "Системы обеспечения движения поездов",
+        "direction": "23.05.05",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 139,
+                "avg_score": 173
+            },
+            "Целевая квота": {
+                "min_score": 99,
+                "avg_score": 143
+            },
+            "Отдельная квота": {
+                "min_score": 300,
+                "avg_score": 307
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66005,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей",
+        "direction": "23.05.06",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 134,
+                "avg_score": 179
+            },
+            "Особая квота": {
+                "min_score": 143,
+                "avg_score": 143
+            },
+            "Целевая квота": {
+                "min_score": 115,
+                "avg_score": 136
+            },
+            "Отдельная квота": {
+                "min_score": 147,
+                "avg_score": 147
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66006,
+        "specialty": "Экономическая безопасность",
+        "direction": "38.05.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66007,
+        "specialty": "Таможенное дело",
+        "direction": "38.05.02",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66008,
+        "specialty": "Таможенное дело",
+        "direction": "38.05.02",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66009,
+        "specialty": "Правовое обеспечение национальной безопасности",
+        "direction": "40.05.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66010,
+        "specialty": "Правовое обеспечение национальной безопасности",
+        "direction": "40.05.01",
+        "subjects": "SOCIAL_SCIENCE, RUSSIAN, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66057,
+        "specialty": "Инноватика",
+        "direction": "27.03.05",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 234,
+                "avg_score": 250
+            },
+            "Отдельная квота": {
+                "min_score": 310,
+                "avg_score": 310
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66097,
+        "specialty": "Экономика",
+        "direction": "38.03.01",
+        "subjects": "MATH, RUSSIAN, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66098,
+        "specialty": "Менеджмент",
+        "direction": "38.03.02",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66099,
+        "specialty": "Управление персоналом",
+        "direction": "38.03.03",
+        "subjects": "MATH, RUSSIAN, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66109,
+        "specialty": "Электроэнергетика и электротехника",
+        "direction": "13.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66110,
+        "specialty": "Теология",
+        "direction": "48.03.01",
+        "subjects": "HISTORY, RUSSIAN, SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66127,
+        "specialty": "Эксплуатация железных дорог",
+        "direction": "23.05.04",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66128,
+        "specialty": "Эксплуатация железных дорог",
+        "direction": "23.05.04",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66197,
+        "specialty": "Прикладная математика и информатика. Математическое моделирование и системный анализ (УПМ)",
+        "direction": "01.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 184,
+                "avg_score": 189
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66198,
+        "specialty": "Строительство. Промышленное и гражданское строительство (СГС)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 171,
+                "avg_score": 193
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66199,
+        "specialty": "Строительство. Автомобильные дороги (ДДА)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66200,
+        "specialty": "Строительство. Рельсовые пути городского транспорта (СРП)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66201,
+        "specialty": "Информатика и вычислительная техника. Системы автоматизированного проектирования (САП)",
+        "direction": "09.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 149,
+                "avg_score": 159
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66202,
+        "specialty": "Информатика и вычислительная техника. Технологии разработки программного обеспечения (УВП)",
+        "direction": "09.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 227,
+                "avg_score": 237
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66203,
+        "specialty": "Информатика и вычислительная техника. Вычислительные системы и сети (УВВ)",
+        "direction": "09.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 220,
+                "avg_score": 220
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66204,
+        "specialty": "Информатика и вычислительная техника. Цифровая инженерия транспортных процессов (ШЦТ)",
+        "direction": "09.03.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 189,
+                "avg_score": 194
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66205,
+        "specialty": "Информатика и вычислительная техника. IT-сервисы и технологии обработки данных на транспорте (ШАД)",
+        "direction": "09.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 215,
+                "avg_score": 223
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66206,
+        "specialty": "Информационные системы и технологии. Информационные системы и технологии на транспорте (УИС)",
+        "direction": "09.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 204,
+                "avg_score": 213
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66207,
+        "specialty": "Информационные системы и технологии. Технологии искусственного интеллекта в транспортных системах (УИТ)",
+        "direction": "09.03.02",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 184,
+                "avg_score": 195
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66208,
+        "specialty": "Прикладная информатика. Прикладная информатика в экономике и бизнесе (ЭПИ)",
+        "direction": "09.03.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66209,
+        "specialty": "Информационная безопасность. Безопасность компьютерных систем (УИБ)",
+        "direction": "10.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 161,
+                "avg_score": 210
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66210,
+        "specialty": "Инфокоммуникационные технологии и системы связи. Системы мобильной связи и сетевые технологии на транспорте (ШМС)",
+        "direction": "11.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 212,
+                "avg_score": 212
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66211,
+        "specialty": "Теплоэнергетика и теплотехника. Промышленная теплоэнергетика (ТТП)",
+        "direction": "13.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 173,
+                "avg_score": 197
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66212,
+        "specialty": "Электроэнергетика и электротехника. Интеллектуальные электротехнические транспортные системы (ТЭИ)",
+        "direction": "13.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66213,
+        "specialty": "Мехатроника и робототехника. Автоматизация и роботизация технологических процессов (ТМР)",
+        "direction": "15.03.06",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 146,
+                "avg_score": 178
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66214,
+        "specialty": "Техносферная безопасность. Безопасность жизнедеятельности в техносфере (ТБЖ)",
+        "direction": "20.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66215,
+        "specialty": "Техносферная безопасность. Экологическая и промышленная безопасность (УЗС)",
+        "direction": "20.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66216,
+        "specialty": "Технология транспортных процессов. Организация перевозок и управление на автомобильном транспорте (УТА)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66217,
+        "specialty": "Технология транспортных процессов. Цифровой транспорт и логистика (УТЦ)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 131,
+                "avg_score": 168
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66218,
+        "specialty": "Технология транспортных процессов. Организация перевозок и управление на железнодорожном транспорте (УТН)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 182,
+                "avg_score": 200
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66219,
+        "specialty": "Технология транспортных процессов. Планирование и эксплуатация городских транспортных систем (ШТС)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 147,
+                "avg_score": 177
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66220,
+        "specialty": "Наземные транспортно-технологические комплексы. Транспортный и промышленный дизайн (ШТД)",
+        "direction": "23.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 208,
+                "avg_score": 208
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66221,
+        "specialty": "Наземные транспортно-технологические комплексы. Стандартизация и метрология в транспортном комплексе (ТМС)",
+        "direction": "23.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66222,
+        "specialty": "Аэронавигация. Организация бизнес-процессов на воздушном транспорте (АМБ)",
+        "direction": "25.03.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66226,
+        "specialty": "Управление в технических системах. Системы, методы и средства цифровизации и управления (ТУУ)",
+        "direction": "27.03.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66227,
+        "specialty": "Инноватика. Управление цифровыми инновациями (ТИУ)",
+        "direction": "27.03.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66228,
+        "specialty": "Экономика. Бухгалтерский учет, анализ и аудит (ЭЭБ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66229,
+        "specialty": "Экономика. Экономика предприятий и организаций (ЭЭП)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66230,
+        "specialty": "Экономика. Финансы и кредит (ЭЭФ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66231,
+        "specialty": "Экономика. Экономика труда (ЭЭТ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 259,
+                "avg_score": 259
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66232,
+        "specialty": "Экономика. Экономика строительного бизнеса (ЭЭС)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 254,
+                "avg_score": 254
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66233,
+        "specialty": "Экономика. Экономика транспортного и логистического бизнеса (ЭЭЛ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66234,
+        "specialty": "Экономика. Международный финансовый и управленческий учет (ЭЭУ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66235,
+        "specialty": "Экономика. Экономика предприятий и организаций (ЭЭПд)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66236,
+        "specialty": "Экономика. Экономика и инженерия транспортных систем. Программа двойного диплома с Высшей школой экономики (ШЭТ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66237,
+        "specialty": "Менеджмент. Логистика и управление цепями поставок (УМЛ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66238,
+        "specialty": "Менеджмент. Транспортный бизнес и логистика (УМН)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66239,
+        "specialty": "Менеджмент. Маркетинг и рыночная аналитика (ЭУМ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66240,
+        "specialty": "Менеджмент. Процессное управление бизнесом (ЭУЦ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66241,
+        "specialty": "Менеджмент. Международный менеджмент (ОММ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66242,
+        "specialty": "Менеджмент. Менеджмент в международном транспортном бизнесе (Российско-Китайская программа) (ОМКк)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66243,
+        "specialty": "Управление персоналом. Управление персоналом в железнодорожной отрасли (ЭБП)",
+        "direction": "38.03.03",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66244,
+        "specialty": "Управление персоналом. Управление персоналом организации (ТУП)",
+        "direction": "38.03.03",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66245,
+        "specialty": "Государственное и муниципальное управление. Государственная и муниципальная служба (ЭГС)",
+        "direction": "38.03.04",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66246,
+        "specialty": "Государственное и муниципальное управление. Государственные и муниципальные финансы (ЭГФ)",
+        "direction": "38.03.04",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66247,
+        "specialty": "Государственное и муниципальное управление. Управление государственной и муниципальной собственностью (ЭГУ)",
+        "direction": "38.03.04",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66248,
+        "specialty": "Государственное и муниципальное управление. Государственная политика и управление в транспортной отрасли (ЭГП)",
+        "direction": "38.03.04",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66250,
+        "specialty": "Бизнес-информатика. Цифровая экономика (ЭБЦ)",
+        "direction": "38.03.05",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66251,
+        "specialty": "Юриспруденция. Гражданско-правовой (ЮЮГ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66252,
+        "specialty": "Юриспруденция. Международно-правовой и морской (ЮЮМ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66253,
+        "specialty": "Юриспруденция. Уголовно-правовой (ЮЮУ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66254,
+        "specialty": "Юриспруденция. Юриспруденция в цифровой экономике и государственном управлении (ЮЮЦ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66255,
+        "specialty": "Международные отношения. Мировая политика: бизнес и международное транспортное право (ОМО)",
+        "direction": "41.03.05",
+        "subjects": "RUSSIAN, HISTORY, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66256,
+        "specialty": "Реклама и связи с общественностью. Реклама и связи с общественностью в отрасли (ЭБР)",
+        "direction": "42.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/IT",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66257,
+        "specialty": "Лингвистика. Перевод и межкультурная коммуникация (ЭЛМ)",
+        "direction": "45.03.02",
+        "subjects": "RUSSIAN, FOREIGN_LANGUAGE, HISTORY/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66258,
+        "specialty": "Строительство уникальных зданий и сооружений. Строительство автомагистралей, аэродромов и специальных сооружений (ДДС)",
+        "direction": "08.05.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66259,
+        "specialty": "Компьютерная безопасность. Информационная безопасность объектов информатизации на базе компьютерных систем (ТКИ)",
+        "direction": "10.05.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 228,
+                "avg_score": 246
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66260,
+        "specialty": "Наземные транспортно-технологические средства. Подъемно-транспортные, строительные, дорожные средства и оборудование (ТНД)",
+        "direction": "23.05.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 121,
+                "avg_score": 151
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66261,
+        "specialty": "Подвижной состав железных дорог. Локомотивы (ТПЛ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 146,
+                "avg_score": 166
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66262,
+        "specialty": "Подвижной состав железных дорог. Грузовые вагоны (ТПВг)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 148,
+                "avg_score": 170
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66263,
+        "specialty": "Подвижной состав железных дорог. Пассажирские вагоны (ТПВп)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 142,
+                "avg_score": 170
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66264,
+        "specialty": "Подвижной состав железных дорог. Электрический транспорт железных дорог (ТПЭ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 107,
+                "avg_score": 159
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66265,
+        "specialty": "Подвижной состав железных дорог. Технология производства и ремонта подвижного состава (ТПР)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 165,
+                "avg_score": 199
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66266,
+        "specialty": "Подвижной состав железных дорог. Высокоскоростной наземный транспорт (ТПТ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 212,
+                "avg_score": 212
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66267,
+        "specialty": "Эксплуатация железных дорог. Управление международными перевозками (УЭИ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66268,
+        "specialty": "Эксплуатация железных дорог. Цифровые технологии управления транспортными процессами (УЭЦ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 149,
+                "avg_score": 149
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66269,
+        "specialty": "Эксплуатация железных дорог. Магистральный транспорт (УЭМ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 111,
+                "avg_score": 166
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66270,
+        "specialty": "Эксплуатация железных дорог. Бизнес-аналитика перевозочного процесса (УЭБ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66271,
+        "specialty": "Эксплуатация железных дорог. Грузовая и коммерческая работа (УЭГ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 156,
+                "avg_score": 156
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66272,
+        "specialty": "Эксплуатация железных дорог. Транспортный бизнес и логистика (УЭЛ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 115,
+                "avg_score": 181
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66273,
+        "specialty": "Эксплуатация железных дорог. Пассажирский комплекс железнодорожного транспорта (УЭП)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 154,
+                "avg_score": 180
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66274,
+        "specialty": "Системы обеспечения движения поездов. Электроснабжение железных дорог (ТСЭ)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 108,
+                "avg_score": 176
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66275,
+        "specialty": "Системы обеспечения движения поездов. Автоматика и телемеханика на железнодорожном транспорте (ТСА)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 122,
+                "avg_score": 164
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66276,
+        "specialty": "Системы обеспечения движения поездов. Телекоммуникационные системы и сети железнодорожного транспорта (ТСТ)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 122,
+                "avg_score": 168
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66277,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Строительство магистральных железных дорог (СЖД)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 186,
+                "avg_score": 186
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66278,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Управление техническим состоянием железнодорожного пути (СТП)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 137,
+                "avg_score": 166
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66279,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Геоинформационные технологии при проектировании, строительстве и эксплуатации транспортной инфраструктуры (СГТ)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66281,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Тоннели и метрополитены (СМТ)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 156,
+                "avg_score": 185
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66284,
+        "specialty": "Экономическая безопасность. Экономическая безопасность транспортного комплекса в условиях цифровой трансформации (ЭСБ)",
+        "direction": "38.05.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66285,
+        "specialty": "Таможенное дело. Таможенно-логистические информационные системы и технологии (ЮТТ)",
+        "direction": "38.05.02",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66286,
+        "specialty": "Таможенное дело. Международное таможенное сотрудничество (ЮТМ)",
+        "direction": "38.05.02",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66287,
+        "specialty": "Правовое обеспечение национальной безопасности. Уголовно-правовая (ЮПБ)",
+        "direction": "40.05.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66288,
+        "specialty": "Судебная экспертиза. Криминалистические экспертизы (ЮСИ)",
+        "direction": "40.05.03",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66329,
+        "specialty": "Электроэнергетика и электротехника. Электроснабжение (ТЭЛ)",
+        "direction": "13.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66330,
+        "specialty": "Технология транспортных процессов. Организация перевозок и управление на железнодорожном транспорте (УТО)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66331,
+        "specialty": "Управление качеством. Управление качеством в производственно-технологических системах (СКУ)",
+        "direction": "27.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66332,
+        "specialty": "Менеджмент. Международная транспортная логистика (ОММ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66333,
+        "specialty": "Юриспруденция. Гражданско-правовой (ЮЮГ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66334,
+        "specialty": "Юриспруденция. Юриспруденция в цифровой экономике и государственном управлении (ЮЮЦ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66335,
+        "specialty": "Подвижной состав железных дорог. Технология производства и ремонта подвижного состава (ТПСу)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66336,
+        "specialty": "Таможенное дело. Таможенно-логистические информационные системы и технологии (ЮТТ)",
+        "direction": "38.05.02",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66337,
+        "specialty": "Правовое обеспечение национальной безопасности. Уголовно-правовая (ЮПБ)",
+        "direction": "40.05.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66346,
+        "specialty": "Строительство. Промышленное и гражданское строительство (ЗГС)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66347,
+        "specialty": "Строительство. Автомобильные дороги (ЗАМ)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66348,
+        "specialty": "Строительство. Водоснабжение и водоотведение (ЗВВ)",
+        "direction": "08.03.01",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66349,
+        "specialty": "Прикладная информатика. Прикладная информатика в информационной сфере (ЗИИ)",
+        "direction": "09.03.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66350,
+        "specialty": "Инфокоммуникационные технологии и системы связи. Оптические системы и сети связи (ЗИТ)",
+        "direction": "11.03.02",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66351,
+        "specialty": "Теплоэнергетика и теплотехника. Промышленная теплоэнергетика (ЗТТ)",
+        "direction": "13.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66352,
+        "specialty": "Конструкторско-технологическое обеспечение машиностроительных производств. Технология машиностроения (ТКТ)",
+        "direction": "15.03.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66353,
+        "specialty": "Техносферная безопасность. Безопасность жизнедеятельности в техносфере (ЗББ)",
+        "direction": "20.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66354,
+        "specialty": "Технология транспортных процессов. Организация перевозок и управление на железнодорожном транспорте (ЗТП)",
+        "direction": "23.03.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66355,
+        "specialty": "Экономика. Бухгалтерский учет, анализ и аудит (ЗЭБ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66356,
+        "specialty": "Экономика. Экономика транспортного и логистического бизнеса (ЗТЛ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66357,
+        "specialty": "Экономика. Экономика предприятий и организаций (ЗЭП)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66358,
+        "specialty": "Экономика. Финансы и кредит (ЗЭФ)",
+        "direction": "38.03.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66359,
+        "specialty": "Менеджмент. Логистика и управление цепями поставок (ЗМЛ)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66360,
+        "specialty": "Менеджмент. Менеджмент организации (ЗМО)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66361,
+        "specialty": "Управление персоналом. Управление персоналом организации (ЗУП)",
+        "direction": "38.03.03",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66362,
+        "specialty": "Государственное и муниципальное управление. Управление государственной и муниципальной собственностью (ЗГУ)",
+        "direction": "38.03.04",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_PUBLIC_ADMIN",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66363,
+        "specialty": "Юриспруденция. Гражданско-правовой (ЮЮГ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66364,
+        "specialty": "Юриспруденция. Уголовно-правовой (ЮЮУ)",
+        "direction": "40.03.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66365,
+        "specialty": "Наземные транспортно-технологические средства. Подъемно-транспортные, строительные, дорожные средства и оборудование (ЗНС)",
+        "direction": "23.05.01",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 117,
+                "avg_score": 140
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66366,
+        "specialty": "Подвижной состав железных дорог. Локомотивы (ЗПЛ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 99,
+                "avg_score": 121
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66367,
+        "specialty": "Подвижной состав железных дорог. Грузовые вагоны (ЗПГ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66368,
+        "specialty": "Подвижной состав железных дорог. Пассажирские вагоны (ЗПП)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 147,
+                "avg_score": 163
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66369,
+        "specialty": "Подвижной состав железных дорог. Электрический транспорт железных дорог (ЗПЭ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 103,
+                "avg_score": 142
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66370,
+        "specialty": "Подвижной состав железных дорог. Технология производства и ремонта подвижного состава (ЗПТ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 153,
+                "avg_score": 156
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66371,
+        "specialty": "Эксплуатация железных дорог. Магистральный транспорт (ЗДМ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 145,
+                "avg_score": 162
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66372,
+        "specialty": "Эксплуатация железных дорог. Пассажирский комплекс железнодорожного транспорта (ЗДП)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 120,
+                "avg_score": 142
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66373,
+        "specialty": "Эксплуатация железных дорог. Грузовая и коммерческая работа (ЗДГ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66374,
+        "specialty": "Эксплуатация железных дорог. Цифровые технологии управления транспортными процессами (УЭЦ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66380,
+        "specialty": "Эксплуатация железных дорог. Цифровые технологии управления транспортными процессами (УЭЦ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66381,
+        "specialty": "Эксплуатация железных дорог. Магистральный транспорт (ЗДМ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66382,
+        "specialty": "Эксплуатация железных дорог. Пассажирский комплекс железнодорожного транспорта (ЗДП)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66383,
+        "specialty": "Эксплуатация железных дорог. Грузовая и коммерческая работа (ЗДГ)",
+        "direction": "23.05.04",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66384,
+        "specialty": "Системы обеспечения движения поездов. Электроснабжение железных дорог (ЗСЭ)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 99,
+                "avg_score": 127
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66385,
+        "specialty": "Системы обеспечения движения поездов. Автоматика и телемеханика на железнодорожном транспорте (ЗСА)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 117,
+                "avg_score": 134
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66386,
+        "specialty": "Системы обеспечения движения поездов. Телекоммуникационные системы и сети железнодорожного транспорта (ЗСТ)",
+        "direction": "23.05.05",
+        "subjects": "RUSSIAN, MATH, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 162,
+                "avg_score": 174
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66387,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Управление техническим состоянием железнодорожного пути (ЗЖУ)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 115,
+                "avg_score": 134
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66388,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Мосты (ЗЖМ)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 157,
+                "avg_score": 157
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66389,
+        "specialty": "Экономическая безопасность. Экономико-правовое обеспечение экономической безопасности (ЗБЭ)",
+        "direction": "38.05.01",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66390,
+        "specialty": "Таможенное дело. Таможенно-логистические информационные системы и технологии (ЮТТд)",
+        "direction": "38.05.02",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66391,
+        "specialty": "Таможенное дело. Таможенно-логистические информационные системы и технологии (ЮТТ)",
+        "direction": "38.05.02",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, PROF_TEST_CUSTOMS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66392,
+        "specialty": "Правовое обеспечение национальной безопасности. Уголовно-правовая (ЮПБд)",
+        "direction": "40.05.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66393,
+        "specialty": "Правовое обеспечение национальной безопасности. Уголовно-правовая (ЮПБ)",
+        "direction": "40.05.01",
+        "subjects": "RUSSIAN, SOCIAL_SCIENCE, FOREIGN_LANGUAGE/HISTORY",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66421,
+        "specialty": "Менеджмент. Международная транспортная логистика (Российско-Китайская программа) (ОМНк)",
+        "direction": "38.03.02",
+        "subjects": "RUSSIAN, MATH, FOREIGN_LANGUAGE/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66477,
+        "specialty": "Подвижной состав железных дорог",
+        "direction": "23.05.03",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66497,
+        "specialty": "Подвижной состав железных дорог. Пассажирские вагоны (ТПВ)",
+        "direction": "23.05.03",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очно-заочная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 65986,
+        "specialty": "Наземные транспортно-технологические средства",
+        "direction": "23.05.01",
+        "subjects": "MATH, RUSSIAN, IT/PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": 168,
+                "avg_score": 187
+            },
+            "Особая квота": {
+                "min_score": 152,
+                "avg_score": 152
+            },
+            "Целевая квота": {
+                "min_score": 121,
+                "avg_score": 151
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": 171,
+                "avg_score": 171
+            }
+        }
+    },
+    {
+        "id": 66249,
+        "specialty": "Бизнес-информатика. Цифровая экономика (ЭБЦд)",
+        "direction": "38.03.05",
+        "subjects": "RUSSIAN, MATH, IT/SOCIAL_SCIENCE",
+        "year": 2024,
+        "education_level": "Бакалавриат",
+        "study_form": "Очная",
+        "scores": {
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    },
+    {
+        "id": 66280,
+        "specialty": "Строительство железных дорог, мостов и транспортных тоннелей. Мосты (СММ)",
+        "direction": "23.05.06",
+        "subjects": "RUSSIAN, MATH, PHYSICS",
+        "year": 2024,
+        "education_level": "Специалитет",
+        "study_form": "Очная",
+        "scores": {
+            "Общий конкурс": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Особая квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Целевая квота": {
+                "min_score": 122,
+                "avg_score": 151
+            },
+            "Отдельная квота": {
+                "min_score": null,
+                "avg_score": null
+            },
+            "Места по договорам": {
+                "min_score": null,
+                "avg_score": null
+            }
+        }
+    }
+]
