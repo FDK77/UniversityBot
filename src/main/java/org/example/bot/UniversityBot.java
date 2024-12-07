@@ -11,7 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class UniversityBot extends TelegramLongPollingBot {
     private final Map<Long, List<String>> userSubjects = new HashMap<>(); // Выбранные предметы
@@ -147,6 +147,9 @@ public class UniversityBot extends TelegramLongPollingBot {
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder().text("Особая квота").callbackData("QUOTA_Особая квота").build()
         ));
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder().text("Места по договорам").callbackData("QUOTA_Места по договорам").build()
+        ));
 
         keyboard.setKeyboard(buttons);
         sendMessage.setReplyMarkup(keyboard);
@@ -157,6 +160,7 @@ public class UniversityBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 
     private void sendSubjectSelectionMessage(Long chatId) {
         sendSubjectSelectionMessage(chatId, "Выберите предметы (нажмите 'Готово' для завершения):");
@@ -235,8 +239,7 @@ public class UniversityBot extends TelegramLongPollingBot {
         List<Specialty> unknownScoreSpecialties = new ArrayList<>();
 
         for (Specialty specialty : specialties) {
-            // Определяем код группы из specialty
-            String specialtyGroupCode = specialty.getDirection().substring(0, 2); // Предполагаем, что код группы — первые 2 символа
+            String specialtyGroupCode = specialty.getDirection().substring(0, 2); // Код группы - первые 2 символа
             if (!preferredGroups.contains(specialtyGroupCode)) {
                 continue; // Пропускаем, если группа не выбрана
             }
@@ -251,6 +254,7 @@ public class UniversityBot extends TelegramLongPollingBot {
                 availableSpecialties.add(specialty);
             }
         }
+
 
         // Формируем результат
         StringBuilder result = new StringBuilder("📊 Ваши результаты:\n");
@@ -324,12 +328,15 @@ public class UniversityBot extends TelegramLongPollingBot {
                     counter++,
                     specialty.getSpecialty(),
                     specialty.getDirection(),
-                    quota != null ? specialty.getScores().get(quota).getMinScore() : 0,
+                    quota != null && specialty.getScores().get(quota) != null
+                            ? specialty.getScores().get(quota).getMinScore()
+                            : 0,
                     specialty.getYear()
             );
             builder.append(specialtyInfo);
         }
     }
+
 
     private void resetUserData(Long userId) {
         userSubjects.remove(userId);
