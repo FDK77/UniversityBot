@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Specialty {
-    private int id;
+    private String id;
 
     private String specialty;
 
@@ -27,12 +27,18 @@ public class Specialty {
     private Map<String, ScoreInfo> scores;
 
     // Getters and Setters
-    public int getId() {
+
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
     }
 
     public String getSpecialty() {
