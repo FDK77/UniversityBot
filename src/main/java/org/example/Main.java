@@ -85,8 +85,14 @@ public class Main {
                         && specialty.getScores().get("Общий конкурс") != null
                         && specialty.getScores().get("Общий конкурс").getMinScore() == null
                         && Objects.equals(existingSpecialty.getStudyForm(), specialty.getStudyForm())) {
-                    // Добавляем текущую специальность в профили существующей специальности
-                    existingSpecialty.profiles.add(specialty.getSpecialty());
+                    // Обрезаем текст до последней точки
+                    String specialtyName = specialty.getSpecialty().trim();
+                    int lastDotIndex = specialtyName.lastIndexOf('.');
+                    if (lastDotIndex != -1) {
+                        specialtyName = specialtyName.substring(lastDotIndex + 1).trim();
+                    }
+                    // Добавляем обработанное название профиля
+                    existingSpecialty.profiles.add(specialtyName);
                     // Удаляем текущую специальность, так как она уже добавлена
                     iterator.remove();
                 }
@@ -99,4 +105,5 @@ public class Main {
         // Возвращаем обновлённый список
         return specialties;
     }
+
 }

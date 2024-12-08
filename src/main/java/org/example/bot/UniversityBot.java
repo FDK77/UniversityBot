@@ -14,6 +14,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UniversityBot extends TelegramLongPollingBot {
 
@@ -525,19 +526,20 @@ public class UniversityBot extends TelegramLongPollingBot {
     private void appendSpecialtyList(StringBuilder builder, List<Specialty> specialties, String quota) {
         int counter = 1;
         for (Specialty specialty : specialties) {
-            // Преобразуем список профилей в строку с переносами строк
-            String profiles = String.join("\n", specialty.getProfiles());
+            // Преобразуем список профилей в строку с более читабельным форматом
+            String profiles = specialty.getProfiles().stream()
+                    .map(profile -> "    • " + profile)
+                    .collect(Collectors.joining("\n"));
 
             String specialtyInfo = String.format(
                     "🔸 #%d\n" +
                             "🏫 Специальность: %s\n" +
                             "📖 Направление: %s\n" +
-                            "📖 Профили:\n%s\n" + // Профили с переносом строки
+                            "📖 Профили:\n%s\n" + // Профили с форматированием
                             "📖 Форма обучения: %s\n" +
                             (quota != null
-                                    ? "🎯 Минимальный балл: %d\n"
-                                    : "🎯 Минимальный балл: неизвестно\n") +
-                            "📅 Год: %d\n\n",
+                                    ? "🎯 Минимальный балл: %d\n\n"
+                                    : "🎯 Минимальный балл: неизвестно\n\n"),
                     counter++,
                     specialty.getSpecialty(),
                     specialty.getDirection(),
@@ -545,8 +547,7 @@ public class UniversityBot extends TelegramLongPollingBot {
                     specialty.getStudyForm(),
                     quota != null && specialty.getScores().get(quota) != null
                             ? specialty.getScores().get(quota).getMinScore()
-                            : 0,
-                    specialty.getYear()
+                            : 0
             );
             builder.append(specialtyInfo);
         }
@@ -560,6 +561,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7872273967:AAECXYzgpVqceffU0zcOvQZUZk7eB5-EJqc";
+        return "7632414334:AAHmiUa_LBgkm6GXp5Lw1jh6ZgXt8jt3HYg";
     }
 }
