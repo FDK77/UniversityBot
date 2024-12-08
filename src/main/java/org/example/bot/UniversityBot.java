@@ -534,21 +534,22 @@ public class UniversityBot extends TelegramLongPollingBot {
             String specialtyInfo = String.format(
                     "🔸 #%d\n" +
                             "🏫 Специальность: %s\n" +
-                            "📖 Направление: %s\n" +
-                            "📖 Профили:\n%s\n" + // Профили с форматированием
-                            "📖 Форма обучения: %s\n" +
+                            "🎓 Направление: %s\n" +
+                            "💡 Профили:\n%s\n" +
+                            "📚 Форма обучения: %s\n" +
                             (quota != null
                                     ? "🎯 Минимальный балл: %d\n\n"
                                     : "🎯 Минимальный балл: неизвестно\n\n"),
                     counter++,
                     specialty.getSpecialty(),
                     specialty.getDirection(),
-                    profiles.isEmpty() ? "нет данных" : profiles, // Если профилей нет, пишем "нет данных"
+                    profiles.isEmpty() ? "нет данных" : profiles,
                     specialty.getStudyForm(),
                     quota != null && specialty.getScores().get(quota) != null
                             ? specialty.getScores().get(quota).getMinScore()
                             : 0
             );
+
             builder.append(specialtyInfo);
         }
     }
