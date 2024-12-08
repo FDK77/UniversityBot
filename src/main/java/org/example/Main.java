@@ -10,8 +10,10 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -26,7 +28,8 @@ public class Main {
             }
             List<Specialty> specialties = objectMapper.readValue(
                     specialtiesStream,
-                    new TypeReference<List<Specialty>>() {}
+                    new TypeReference<List<Specialty>>() {
+                    }
             );
 
             // Загрузка кодов групп
@@ -36,7 +39,8 @@ public class Main {
             }
             Map<String, String> groupCodesMap = objectMapper.readValue(
                     groupCodesStream,
-                    new TypeReference<Map<String, String>>() {}
+                    new TypeReference<Map<String, String>>() {
+                    }
             );
 
             List<GroupCode> groupCodes = groupCodesMap.entrySet()
@@ -44,14 +48,55 @@ public class Main {
                     .map(entry -> new GroupCode(entry.getKey(), entry.getValue()))
                     .collect(Collectors.toList());
 
+            // Обработка специальностей для добавления профилей
+            List<Specialty> updatedSpecialties = processSpecialties(specialties);
+
             // Инициализация бота
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new UniversityBot(specialties, groupCodes));
+            botsApi.registerBot(new UniversityBot(updatedSpecialties, groupCodes));
 
             System.out.println("Бот успешно запущен!");
         } catch (Exception e) {
             System.err.println("Ошибка: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Метод для обработки специальностей и заполнения профилей.
+     */
+    public static List<Specialty> processSpecialties(List<Specialty> specialties) {
+        // Карта направлений для отслеживания уже обработанных направлений
+        Map<String, Specialty> directionMap = new HashMap<>();
+
+        // Используем итератор для безопасного удаления элементов из списка
+        var iterator = specialties.iterator();
+
+        while (iterator.hasNext()) {
+            Specialty specialty = iterator.next();
+
+            // Проверяем, есть ли уже направление в карте
+            if (directionMap.containsKey(specialty.getDirection())) {
+                Specialty existingSpecialty = directionMap.get(specialty.getDirection());
+
+                // Проверяем, что оценки содержат ключ "Общий конкурс" и его минимальный балл равен null
+                if (specialty.getScores() != null
+                        && specialty.getScores().containsKey("Общий конкурс")
+                        && specialty.getScores().get("Общий конкурс") != null
+                        && specialty.getScores().get("Общий конкурс").getMinScore() == null
+                        && Objects.equals(existingSpecialty.getStudyForm(), specialty.getStudyForm())) {
+                    // Добавляем текущую специальность в профили существующей специальности
+                    existingSpecialty.profiles.add(specialty.getSpecialty());
+                    // Удаляем текущую специальность, так как она уже добавлена
+                    iterator.remove();
+                }
+            } else {
+                // Если направления еще нет, добавляем его в карту
+                directionMap.put(specialty.getDirection(), specialty);
+            }
+        }
+
+        // Возвращаем обновлённый список
+        return specialties;
     }
 }

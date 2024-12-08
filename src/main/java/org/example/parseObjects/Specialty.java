@@ -14,6 +14,8 @@ public class Specialty {
 
     private String direction;
 
+    public List<String> profiles = new ArrayList<>(); // Список профилей
+
     private List<String> subjects = new ArrayList<>(); // Список для хранения предметов
 
     private int year;
@@ -99,4 +101,27 @@ public class Specialty {
     public void setScores(Map<String, ScoreInfo> scores) {
         this.scores = scores;
     }
+
+    public List<String> getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(List<String> profiles) {
+        this.profiles = profiles;
+    }
+    @Override
+    public String toString() {
+        return "Specialty{" +
+                "id='" + id + '\'' +
+                ", specialty='" + specialty + '\'' +
+                ", direction='" + direction + '\'' +
+                ", profiles=" + String.join(", ", profiles) + // Объединяем элементы списка в строку
+                ", subjects=" + subjects +
+                ", year=" + year +
+                ", educationLevel='" + educationLevel + '\'' +
+                ", studyForm='" + studyForm + '\'' +
+                ", scores=" + scores +
+                '}';
+    }
+
 }

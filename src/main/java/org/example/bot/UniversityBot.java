@@ -525,10 +525,15 @@ public class UniversityBot extends TelegramLongPollingBot {
     private void appendSpecialtyList(StringBuilder builder, List<Specialty> specialties, String quota) {
         int counter = 1;
         for (Specialty specialty : specialties) {
+            // Преобразуем список профилей в строку с переносами строк
+            String profiles = String.join("\n", specialty.getProfiles());
+
             String specialtyInfo = String.format(
                     "🔸 #%d\n" +
                             "🏫 Специальность: %s\n" +
                             "📖 Направление: %s\n" +
+                            "📖 Профили:\n%s\n" + // Профили с переносом строки
+                            "📖 Форма обучения: %s\n" +
                             (quota != null
                                     ? "🎯 Минимальный балл: %d\n"
                                     : "🎯 Минимальный балл: неизвестно\n") +
@@ -536,6 +541,8 @@ public class UniversityBot extends TelegramLongPollingBot {
                     counter++,
                     specialty.getSpecialty(),
                     specialty.getDirection(),
+                    profiles.isEmpty() ? "нет данных" : profiles, // Если профилей нет, пишем "нет данных"
+                    specialty.getStudyForm(),
                     quota != null && specialty.getScores().get(quota) != null
                             ? specialty.getScores().get(quota).getMinScore()
                             : 0,
@@ -545,13 +552,14 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
     }
 
+
     @Override
     public String getBotUsername() {
-        return "UniversityGuideBot";
+        return "MyMIITAdmissionBot";
     }
 
     @Override
     public String getBotToken() {
-        return "7632414334:AAHmiUa_LBgkm6GXp5Lw1jh6ZgXt8jt3HYg";
+        return "7872273967:AAECXYzgpVqceffU0zcOvQZUZk7eB5-EJqc";
     }
 }
