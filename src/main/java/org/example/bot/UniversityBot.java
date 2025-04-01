@@ -28,6 +28,11 @@ public class UniversityBot extends TelegramLongPollingBot {
     private final List<GroupCode> groupCodes; // Список групп
     private final Map<Long, List<String>> userPreferredGroups = new HashMap<>(); // Выбранные группы
 
+    private final Map<Long, Boolean> userNotificationPreferences = new HashMap<>();
+    private final Map<Long, String> userNotificationTexts = new HashMap<>();
+    private final Set<Long> adminIds = Set.of(983195539L); // ID администраторов
+    private boolean isAdminMode = false;
+
     public UniversityBot(List<Specialty> specialties, List<GroupCode> groupCodes) {
         this.specialties = specialties;
         this.groupCodes = groupCodes;
@@ -94,9 +99,31 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     private void handleText(Update update) {
         Long userId = update.getMessage().getChatId();
+        System.out.println(userId);
         String text = update.getMessage().getText();
-        Integer messageId = update.getMessage().getMessageId(); // Получение ID сообщения
+        Integer messageId = update.getMessage().getMessageId();
 
+        // Проверяем, является ли пользователь администратором
+        if (adminIds.contains(userId) && text.equalsIgnoreCase("/admin")) {
+            isAdminMode = true;
+            sendMessage(userId, "Режим администратора активирован. Введите текст для рассылки:");
+            return;
+        }
+
+        // Если администратор в режиме рассылки
+        if (adminIds.contains(userId) && isAdminMode) {
+            sendAdminBroadcast(userId, text);
+            isAdminMode = false;
+            return;
+        }
+        if (text.equalsIgnoreCase("/notifications")) {
+            handleNotificationSetup(userId, text);
+        } else if (userNotificationPreferences.containsKey(userId) &&
+                userNotificationPreferences.get(userId) &&
+                userNotificationTexts.containsKey(userId) &&
+                userNotificationTexts.get(userId) == null) {
+            handleNotificationSetup(userId, text);
+        } else {
         if (text.equals("/start")) {
             sendQuotaSelectionMessage(userId);
         } else if (userSubjects.containsKey(userId)) {
@@ -104,15 +131,57 @@ public class UniversityBot extends TelegramLongPollingBot {
         } else {
             sendMessage(userId, "Нажмите /start для начала.");
         }
+        }
     }
 
+    private void sendAdminBroadcast(Long adminId, String text) {
+        int successCount = 0;
+        int failCount = 0;
 
+        // Рассылаем только пользователям с включенными уведомлениями
+        for (Map.Entry<Long, Boolean> entry : userNotificationPreferences.entrySet()) {
+            if (entry.getValue()) { // Если уведомления включены
+                try {
+                    sendMessage(entry.getKey(), "🔔 Сообщение от администратора:\n\n" + text);
+                    successCount++;
+                } catch (Exception e) {
+                    failCount++;
+                }
+            }
+        }
+
+        // Отправляем отчет администратору
+        String report = String.format(
+                "Рассылка завершена!\n\n" +
+                        "✅ Успешно отправлено: %d\n" +
+                        "❌ Не удалось отправить: %d",
+                successCount, failCount
+        );
+
+        sendMessage(adminId, report);
+    }
 
     private void handleCallback(CallbackQuery callbackQuery) {
         Long userId = callbackQuery.getMessage().getChatId();
         Integer messageId = callbackQuery.getMessage().getMessageId();
         String data = callbackQuery.getData();
-
+        if (data.equals("NOTIFY_SETUP")) {
+            handleNotificationSetup(userId, "/notifications");
+        }
+        if (data.equals("ADMIN_PANEL")) {
+            if (adminIds.contains(userId)) {
+                isAdminMode = true;
+                sendMessage(userId, "Режим администратора активирован. Введите текст для рассылки:");
+            }
+        }
+        if (data.equals("NOTIFY_ON")) {
+            userNotificationPreferences.put(userId, true);
+            userNotificationTexts.put(userId, null); // Пока без текста
+            sendMessage(userId, "Уведомления включены! Введите текст, который вы хотите получать ежедневно:");
+        } else if (data.equals("NOTIFY_OFF")) {
+            userNotificationPreferences.put(userId, false);
+            sendMessage(userId, "Уведомления выключены.");
+        }
         if (data.startsWith("QUOTA_")) {
             // Обработка выбора квоты
             String quota = data.substring(6);
@@ -306,6 +375,8 @@ public class UniversityBot extends TelegramLongPollingBot {
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+        // Кнопки выбора квоты
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder().text("Общий конкурс").callbackData("QUOTA_Общий конкурс").build()
         ));
@@ -318,6 +389,25 @@ public class UniversityBot extends TelegramLongPollingBot {
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder().text("Места по договорам").callbackData("QUOTA_Места по договорам").build()
         ));
+
+        // Новая кнопка для уведомлений
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("🔔 Настроить уведомления")
+                        .callbackData("NOTIFY_SETUP")
+                        .build()
+        ));
+
+        keyboard.setKeyboard(buttons);
+        sendMessage.setReplyMarkup(keyboard);
+        if (adminIds.contains(chatId)) {
+            buttons.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text("👨‍💻 Админ-панель")
+                            .callbackData("ADMIN_PANEL")
+                            .build()
+            ));
+        }
 
         keyboard.setKeyboard(buttons);
         sendMessage.setReplyMarkup(keyboard);
@@ -573,6 +663,58 @@ public class UniversityBot extends TelegramLongPollingBot {
             );
 
             builder.append(specialtyInfo);
+        }
+    }
+
+    private void handleNotificationSetup(Long userId, String text) {
+        if (text.equalsIgnoreCase("/notifications") || text.equals("NOTIFY_SETUP")) {
+            // Запрос на настройку уведомлений
+            SendMessage message = new SendMessage();
+            message.setChatId(userId);
+            message.setText("Хотите получать текстовые уведомления?");
+
+            InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+            List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+            buttons.add(Arrays.asList(
+                    InlineKeyboardButton.builder().text("✅ Включить").callbackData("NOTIFY_ON").build(),
+                    InlineKeyboardButton.builder().text("❌ Выключить").callbackData("NOTIFY_OFF").build()
+            ));
+
+            keyboard.setKeyboard(buttons);
+            message.setReplyMarkup(keyboard);
+
+            try {
+                execute(message);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (userNotificationPreferences.containsKey(userId) &&
+                userNotificationPreferences.get(userId) &&
+                userNotificationTexts.containsKey(userId) &&
+                userNotificationTexts.get(userId) == null) {
+            // Сохранение текста уведомления
+            userNotificationTexts.put(userId, text);
+            sendMessage(userId, "Текст уведомления сохранён! Вы будете получать его ежедневно.");
+            // После сохранения текста уведомления показываем изначальные кнопки
+            sendQuotaSelectionMessage(userId);
+        }
+    }
+    public void sendDailyNotifications() {
+        for (Map.Entry<Long, Boolean> entry : userNotificationPreferences.entrySet()) {
+            if (entry.getValue()) { // Если уведомления включены
+                boolean hasActiveAdmins = adminIds.stream()
+                        .anyMatch(id -> userNotificationPreferences.getOrDefault(id, false));
+
+                if (!hasActiveAdmins) {
+                    return; // Не отправляем уведомления, если нет активных администраторов
+                }
+                Long userId = entry.getKey();
+                String notificationText = userNotificationTexts.getOrDefault(userId,
+                        "⏰ Ваше ежедневное уведомление от UniversityBot!");
+
+                sendMessage(userId, notificationText);
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package org.example;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.bot.NotificationScheduler;
 import org.example.bot.UniversityBot;
 import org.example.parseObjects.GroupCode;
 import org.example.parseObjects.Specialty;
@@ -69,9 +70,13 @@ public class Main {
 
             // Инициализация бота
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new UniversityBot(updatedSpecialties, groupCodes));
-
+            UniversityBot universityBot = new UniversityBot(updatedSpecialties, groupCodes);
+            NotificationScheduler scheduler = new NotificationScheduler(universityBot);
+            scheduler.start();
+            botsApi.registerBot(universityBot);
+            Runtime.getRuntime().addShutdownHook(new Thread(scheduler::stop));
             System.out.println("Бот успешно запущен!");
+
         } catch (Exception e) {
             System.err.println("Ошибка: " + e.getMessage());
             e.printStackTrace();
