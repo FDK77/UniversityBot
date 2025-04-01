@@ -17,6 +17,14 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Main {
+
+    public static class GroupJson {
+        public String group_name;
+        public List<String> subjects;
+
+        public GroupJson() {} // обязательно нужен для Jackson
+    }
+
     public static void main(String[] args) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -33,19 +41,27 @@ public class Main {
             );
 
             // Загрузка кодов групп
-            InputStream groupCodesStream = Main.class.getClassLoader().getResourceAsStream("codes_to_groups.json");
+            InputStream groupCodesStream = Main.class.getClassLoader().getResourceAsStream("updated_codes_to_groups.json");
             if (groupCodesStream == null) {
-                throw new RuntimeException("Файл codes_to_groups.json не найден в ресурсах.");
+                throw new RuntimeException("Файл updated_codes_to_groups.json не найден в ресурсах.");
             }
-            Map<String, String> groupCodesMap = objectMapper.readValue(
+
+// Класс для промежуточной структуры JSON
+
+// Преобразуем JSON в Map<String, GroupJson>
+            Map<String, GroupJson> groupCodesRaw = objectMapper.readValue(
                     groupCodesStream,
-                    new TypeReference<Map<String, String>>() {
-                    }
+                    new TypeReference<Map<String, GroupJson>>() {}
             );
 
-            List<GroupCode> groupCodes = groupCodesMap.entrySet()
+// Преобразуем в List<GroupCode>
+            List<GroupCode> groupCodes = groupCodesRaw.entrySet()
                     .stream()
-                    .map(entry -> new GroupCode(entry.getKey(), entry.getValue()))
+                    .map(entry -> new GroupCode(
+                            entry.getKey(),
+                            entry.getValue().group_name,
+                            entry.getValue().subjects
+                    ))
                     .collect(Collectors.toList());
 
             // Обработка специальностей для добавления профилей

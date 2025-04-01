@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
 public class UniversityBot extends TelegramLongPollingBot {
 
     private final Map<Long, List<String>> userSubjects = new HashMap<>(); // Выбранные предметы
+    private final Map<Long, List<String>> userAllSubjects = new HashMap<>();
+
     private final Map<Long, Map<String, Integer>> userScores = new HashMap<>(); // Баллы по предметам
     private final Map<Long, String> userQuotas = new HashMap<>(); // Выбранная квота
     private final Map<Long, Integer> userMessageId = new HashMap<>(); // Хранилище ID сообщений
@@ -123,17 +125,16 @@ public class UniversityBot extends TelegramLongPollingBot {
             sendSubjectSelectionForm(userId);
         }
         else if (data.startsWith("SUBJECT_")) {
-            // Обработка выбора предмета
             String subject = data.substring(8); // Убираем префикс "SUBJECT_"
             List<String> selectedSubjects = userSubjects.computeIfAbsent(userId, k -> new ArrayList<>());
-
+            List<String> allSubjects = userAllSubjects.computeIfAbsent(userId, k -> new ArrayList<>());
             if (selectedSubjects.contains(subject)) {
-                selectedSubjects.remove(subject); // Убираем предмет, если он уже выбран
+                selectedSubjects.remove(subject);
+                allSubjects.remove(subject);
             } else {
-                selectedSubjects.add(subject); // Добавляем предмет, если он не выбран
+                selectedSubjects.add(subject);
+                allSubjects.add(subject);
             }
-
-            // Обновляем кнопки в одном сообщении
             sendSubjectSelectionMessage(userId, messageId);
         } else if (data.equals("DONE_SUBJECTS")) {
             // Завершение выбора предметов
@@ -189,11 +190,30 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     private InlineKeyboardMarkup generateGroupSelectionKeyboard(Long userId) {
         List<String> selectedGroups = userPreferredGroups.getOrDefault(userId, new ArrayList<>());
+        // Вместо userSubjects берем оригинальный список выбранных предметов
+        List<String> userSelectedSubjects = userAllSubjects.getOrDefault(userId, new ArrayList<>());
+
+        Set<String> normalizedUserSubjects = userSelectedSubjects.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toSet());
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 
         for (GroupCode group : groupCodes) {
+            List<String> groupSubjects = group.getSubjects();
+            if (groupSubjects == null || groupSubjects.isEmpty()) continue;
+
+            List<String> normalizedGroupSubjects = groupSubjects.stream()
+                    .map(String::toUpperCase)
+                    .collect(Collectors.toList());
+
+            long matchCount = normalizedGroupSubjects.stream()
+                    .filter(normalizedUserSubjects::contains)
+                    .count();
+
+            if (matchCount < 3) continue;
+
             String buttonText = selectedGroups.contains(group.getCode())
                     ? "✅ " + group.getName()
                     : "☑️ " + group.getName();
@@ -206,7 +226,6 @@ public class UniversityBot extends TelegramLongPollingBot {
             ));
         }
 
-        // Кнопка завершения выбора
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
                         .text("✅ Готово")
@@ -217,6 +236,9 @@ public class UniversityBot extends TelegramLongPollingBot {
         keyboard.setKeyboard(buttons);
         return keyboard;
     }
+
+
+
 
 
     private void sendSubjectSelectionForm(Long userId) {
@@ -562,6 +584,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7632414334:AAHmiUa_LBgkm6GXp5Lw1jh6ZgXt8jt3HYg";
+        return "7642404481:AAERLpTO7CG1tobYNO_5lNbAEWEyga8LZXs";
     }
 }

@@ -1,0 +1,166 @@
+{
+    "01": {
+        "group_name": "Математика и механика",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "08": {
+        "group_name": "Техника и технологии строительства",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "09": {
+        "group_name": "Информатика и вычислительная техника",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "10": {
+        "group_name": "Информационная безопасность",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "11": {
+        "group_name": "Электроника, радиотехника и системы связи",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "13": {
+        "group_name": "Электро- и теплоэнергетика",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "15": {
+        "group_name": "Машиностроение",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "20": {
+        "group_name": "Техносферная безопасность и природообустройство",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "23": {
+        "group_name": "Техника и технологии наземного транспорта",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "25": {
+        "group_name": "Аэронавигация и эксплуатация авиационной и ракетно-космической техники",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "26": {
+        "group_name": "Техника и технологии кораблестроения и водного транспорта",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "27": {
+        "group_name": "Управление в технических системах",
+        "subjects": [
+            "IT",
+            "MATH",
+            "PHYSICS",
+            "RUSSIAN"
+        ]
+    },
+    "38": {
+        "group_name": "Экономика и управление",
+        "subjects": [
+            "FOREIGN_LANGUAGE",
+            "IT",
+            "MATH",
+            "PROF_TEST_CUSTOMS",
+            "PROF_TEST_PUBLIC_ADMIN",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    },
+    "40": {
+        "group_name": "Юриспруденция",
+        "subjects": [
+            "FOREIGN_LANGUAGE",
+            "HISTORY",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    },
+    "41": {
+        "group_name": "Политические науки и регионоведение",
+        "subjects": [
+            "FOREIGN_LANGUAGE",
+            "HISTORY",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    },
+    "42": {
+        "group_name": "Средства массовой информации и информационно-библиотечное дело",
+        "subjects": [
+            "FOREIGN_LANGUAGE",
+            "IT",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    },
+    "45": {
+        "group_name": "Языкознание и литературоведение",
+        "subjects": [
+            "FOREIGN_LANGUAGE",
+            "HISTORY",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    },
+    "48": {
+        "group_name": "Теология",
+        "subjects": [
+            "HISTORY",
+            "RUSSIAN",
+            "SOCIAL_SCIENCE"
+        ]
+    }
+}
