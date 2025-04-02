@@ -116,7 +116,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     private void handleText(Update update) {
         Long userId = update.getMessage().getChatId();
-        System.out.println(userId);
         String text = update.getMessage().getText();
         Integer messageId = update.getMessage().getMessageId();
         // 1. Проверка команд отзывов
@@ -172,6 +171,7 @@ public class UniversityBot extends TelegramLongPollingBot {
                             (reviewText.isEmpty() ? "(без комментариев)" : reviewText));
 
                     // Сброс
+                    sendQuotaSelectionMessage(userId);
                     userReviewStage.remove(userId);
                     userReviewSpecialty.remove(userId);
                     userReviewRating.remove(userId);
@@ -374,7 +374,6 @@ public class UniversityBot extends TelegramLongPollingBot {
         Long userId = callbackQuery.getMessage().getChatId();
         Integer messageId = callbackQuery.getMessage().getMessageId();
         String data = callbackQuery.getData();
-        // Если пользователь нажал "💬 Отзывы"
         if (data.equals("REVIEWS_MENU")) {
             sendReviewsMenu(userId);
             return;
@@ -472,9 +471,7 @@ public class UniversityBot extends TelegramLongPollingBot {
             return;
         }
 
-        // Если пользователь нажал "Посмотреть отзывы"
         if (data.equals("READ_REVIEWS")) {
-            // Переходим к логике просмотра отзывов
             sendSpecialtyListForReadingReviews(userId);
             return;
         }
@@ -579,19 +576,27 @@ public class UniversityBot extends TelegramLongPollingBot {
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rows = new ArrayList<>();
 
-        // Кнопка «Оставить отзыв»
+        // Кнопка «Оставить отзыв» с эмодзи ✍
         rows.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
-                        .text("Оставить отзыв")
+                        .text("✍ Оставить отзыв")
                         .callbackData("LEAVE_REVIEW")
                         .build()
         ));
 
-        // Кнопка «Посмотреть отзывы»
+        // Кнопка «Посмотреть отзывы» с эмодзи 👁
         rows.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
-                        .text("Посмотреть отзывы")
+                        .text("👁 Посмотреть отзывы")
                         .callbackData("READ_REVIEWS")
+                        .build()
+        ));
+
+        // Кнопка «Назад» с эмодзи ◀️
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("◀️ Назад")
+                        .callbackData("BACK_TO_MAIN")
                         .build()
         ));
 
@@ -604,6 +609,7 @@ public class UniversityBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 
 
     private void sendSafeMessage(Long chatId, String message) {
@@ -620,6 +626,7 @@ public class UniversityBot extends TelegramLongPollingBot {
 
         if (reviews.isEmpty()) {
             sendMessage(userId, "Пока никто не оставил отзыв о «" + specialtyName + "».");
+            sendQuotaSelectionMessage(userId);
             return;
         }
 
@@ -636,6 +643,9 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
 
         sendSafeMessage(userId, sb.toString());
+        sendQuotaSelectionMessage(userId);
+
+
     }
 
 
@@ -748,8 +758,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
 
 
-
-
     private void sendQuotaSelectionMessage(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -775,6 +783,10 @@ public class UniversityBot extends TelegramLongPollingBot {
                 InlineKeyboardButton.builder()
                         .text("📞 Контакты")
                         .callbackData("CONTACTS")
+                        .build(),
+                InlineKeyboardButton.builder()
+                        .text("💬 Отзывы")
+                        .callbackData("REVIEWS_MENU")
                         .build()
         ));
 
@@ -819,8 +831,6 @@ public class UniversityBot extends TelegramLongPollingBot {
                 InlineKeyboardButton.builder().text("Места по договорам").callbackData("QUOTA_Места по договорам").build()
         ));
 
-        // Кнопка "🔔 Настроить уведомления"
-        // Кнопка "Назад"
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
                         .text("◀️ Назад")
@@ -828,15 +838,10 @@ public class UniversityBot extends TelegramLongPollingBot {
                         .build()
         ));
 
-        // КНОПКА ОТЗЫВОВ
-        buttons.add(Collections.singletonList(
-                InlineKeyboardButton.builder()
-                        .text("💬 Отзывы")   // текст, который увидит пользователь
-                        .callbackData("REVIEWS_MENU") // callback, обрабатываемый handleCallback
-                        .build()
-        ));
 
-        // Если пользователь — админ, показываем и кнопку "Админ-панель"
+        // ВАЖНО: теперь свяжем buttons и keyboard
+        keyboard.setKeyboard(buttons);
+        sendMessage.setReplyMarkup(keyboard);
 
         try {
             execute(sendMessage);
@@ -844,6 +849,7 @@ public class UniversityBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
     private void showContactsMenu(Long chatId) {
         // Здесь можно позже добавить любой текст контактов
         String contactsText = "📌 Контактная информация:\n\n" +
