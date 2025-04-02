@@ -1275,7 +1275,6 @@ public class UniversityBot extends TelegramLongPollingBot {
                             "🎓 Направление: %s\n" +
                             "💡 Профили:\n%s\n" +
                             "📚 Форма обучения: %s\n" +
-                            "📚 Описание: %s\n" +
                             (quota != null
                                     ? "🎯 Минимальный балл: %d\n\n"
                                     : "🎯 Минимальный балл: неизвестно\n\n"),
@@ -1284,7 +1283,6 @@ public class UniversityBot extends TelegramLongPollingBot {
                     specialty.getDirection(),
                     profiles.isEmpty() ? "нет данных" : profiles,
                     specialty.getStudyForm(),
-                    specialty.getDescription(),
                     quota != null && specialty.getScores().get(quota) != null
                             ? specialty.getScores().get(quota).getMinScore()
                             : 0
