@@ -1222,6 +1222,12 @@ public class UniversityBot extends TelegramLongPollingBot {
         return specialtyId; // Если почему-то не нашли, вернём сам ID
     }
 
+    public List<Specialty> getSpecialties() {
+        return specialties;
+    }
+    public void addReview(String specialtyId, Review review) {
+        reviewsBySpecialty.computeIfAbsent(specialtyId, k -> new ArrayList<>()).add(review);
+    }
     @Override
     public String getBotUsername() {
         return "MyMIITAdmissionBot";

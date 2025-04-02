@@ -2,9 +2,11 @@ package org.example;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.javafaker.Faker;
 import org.example.bot.NotificationScheduler;
 import org.example.bot.UniversityBot;
 import org.example.parseObjects.GroupCode;
+import org.example.parseObjects.Review;
 import org.example.parseObjects.Specialty;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -25,6 +27,31 @@ public class Main {
 
         public GroupJson() {} // обязательно нужен для Jackson
     }
+
+    private static void generateFakeReviews(UniversityBot bot) {
+        Faker faker = new Faker();
+
+        // Достаем список доступных специальностей
+        List<Specialty> allSpecialties = bot.getSpecialties(); // Нужно публичный getter
+
+        for (Specialty specialty : allSpecialties) {
+            String specialtyId = specialty.getId();
+            int howMany = faker.number().numberBetween(1, 5);  // от 1 до 4–5
+            for (int i = 0; i < howMany; i++) {
+                Long fakeUserId = faker.number().randomNumber();
+                int rating = faker.number().numberBetween(1, 6);
+                String text = faker.lorem().sentence(10);
+
+                // Добавляем
+                bot.addReview(
+                        specialtyId,
+                        new Review(fakeUserId, specialtyId, text, rating)
+                );
+            }
+        }
+        System.out.println("Fake reviews generated!");
+    }
+
 
     public static void main(String[] args) {
         try {
@@ -71,6 +98,7 @@ public class Main {
             // Инициализация бота
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             UniversityBot universityBot = new UniversityBot(updatedSpecialties, groupCodes);
+            generateFakeReviews(universityBot);
             NotificationScheduler scheduler = new NotificationScheduler(universityBot);
             scheduler.start();
             botsApi.registerBot(universityBot);
@@ -126,5 +154,6 @@ public class Main {
         // Возвращаем обновлённый список
         return specialties;
     }
+
 
 }
