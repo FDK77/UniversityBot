@@ -1,6 +1,7 @@
 package org.example.bot;
 
 import org.example.parseObjects.GroupCode;
+import org.example.parseObjects.Review;
 import org.example.parseObjects.SubjectEnum;
 import org.example.parseObjects.Specialty;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -17,7 +18,22 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class UniversityBot extends TelegramLongPollingBot {
+    // Хранилище всех отзывов: ключ — specialtyId (или direction),
+// значение — список отзывов, оставленных пользователями
+    // Новое поле
+    private final Map<Long, String> userReviewStage = new HashMap<>();
 
+    private final Map<String, List<Review>> reviewsBySpecialty = new HashMap<>();
+
+    // Состояние пользователя, чтобы понимать, что он сейчас вводит
+    private final Map<Long, String> userReviewSpecialty = new HashMap<>();
+// Будем использовать это для хранения ID специальности, когда пользователь оставляет отзыв
+    private static final int PAGE_SIZE = 10; // по сколько специальностей на странице
+    private final Map<Long, Boolean> userIsWritingReview = new HashMap<>();
+// Показывает, что пользователь выбрал специальность и теперь бот ждёт от него текста отзыва
+
+    // Если хотим оценку (рейтинги), можно добавить еще один map для временного хранения рейтинга
+    private final Map<Long, Integer> userReviewRating = new HashMap<>();
     private final Map<Long, List<String>> userSubjects = new HashMap<>(); // Выбранные предметы
     private final Map<Long, List<String>> userAllSubjects = new HashMap<>();
 
@@ -102,6 +118,65 @@ public class UniversityBot extends TelegramLongPollingBot {
         System.out.println(userId);
         String text = update.getMessage().getText();
         Integer messageId = update.getMessage().getMessageId();
+        // 1. Проверка команд отзывов
+        if (text.equalsIgnoreCase("/review")) {
+            // Пользователь хочет оставить отзыв о специальности
+            // Предложим ему выбрать специальность
+            sendSpecialtyListForReview(userId);
+            return;
+        } else if (text.equalsIgnoreCase("/reviews")) {
+            // Пользователь хочет посмотреть отзывы
+            // Предложим ему выбрать специальность, отзывы о которой хочет посмотреть
+            sendSpecialtyListForReadingReviews(userId);
+            return;
+        }
+        String stage = userReviewStage.get(userId);
+        if (stage != null) {
+            switch (stage) {
+                case "AWAITING_RATING":
+                    try {
+                        int rating = Integer.parseInt(text.trim());
+                        if (rating < 1 || rating > 5) {
+                            sendMessage(userId, "Оценка должна быть от 1 до 5. Повторите ввод.");
+                            return;
+                        }
+                        userReviewRating.put(userId, rating);
+                        userReviewStage.put(userId, "AWAITING_TEXT");
+
+                        sendMessage(userId, "Спасибо! Оценка принята.\nТеперь введите текст отзыва (или пустое сообщение).");
+                    } catch (NumberFormatException e) {
+                        sendMessage(userId, "Ошибка. Введите число от 1 до 5.");
+                    }
+                    return;
+
+                case "AWAITING_TEXT":
+                    String specialtyId = userReviewSpecialty.get(userId);
+                    String specialtyName = getSpecialtyNameById(specialtyId);
+                    if (specialtyId == null) {
+                        // безопасная обработка
+                        sendMessage(userId, "Ошибка: не найдена выбранная специальность.");
+                        userReviewStage.remove(userId);
+                        return;
+                    }
+
+                    int rating = userReviewRating.getOrDefault(userId, 5);
+                    String reviewText = text.trim();
+
+                    // Сохраняем
+                    reviewsBySpecialty.computeIfAbsent(specialtyId, k -> new ArrayList<>())
+                            .add(new Review(userId, specialtyId, reviewText, rating));
+
+                    sendMessage(userId, "Спасибо! Ваш отзыв о «" + specialtyName + "» сохранён.\n" +
+                            "Оценка: " + rating + "\n" +
+                            (reviewText.isEmpty() ? "(без комментариев)" : reviewText));
+
+                    // Сброс
+                    userReviewStage.remove(userId);
+                    userReviewSpecialty.remove(userId);
+                    userReviewRating.remove(userId);
+                    return;
+            }
+        }
 
         // Проверяем, является ли пользователь администратором
         if (adminIds.contains(userId) && text.equalsIgnoreCase("/admin")) {
@@ -161,10 +236,247 @@ public class UniversityBot extends TelegramLongPollingBot {
         sendMessage(adminId, report);
     }
 
+    private void sendSpecialtyListForReview(Long userId) {
+        // Отправляем новое сообщение (только один раз), для страницы 0:
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(userId);
+        sendMessage.setText("Специальности (страница 1)...");
+
+        InlineKeyboardMarkup keyboard = buildReviewKeyboardPage(userId, 0);
+        sendMessage.setReplyMarkup(keyboard);
+
+        try {
+            Message msg = execute(sendMessage);
+            // msg.getMessageId() — это ID отправленного сообщения
+            // Можем сохранить его в userMessageId.put(userId, msg.getMessageId()) если нужно
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private InlineKeyboardMarkup buildReviewKeyboardPage(Long userId, int pageIndex) {
+        // Считаем общее кол-во и кол-во страниц
+        int total = specialties.size();
+        int totalPages = (int) Math.ceil(total / (double) PAGE_SIZE);
+
+        // Корректируем pageIndex, если вышли за границы
+        if (pageIndex < 0) pageIndex = 0;
+        if (pageIndex > totalPages - 1) pageIndex = totalPages - 1;
+
+        // Индексы "среза" списка
+        int from = pageIndex * PAGE_SIZE;
+        int to = Math.min(from + PAGE_SIZE, total);
+        List<Specialty> pageItems = specialties.subList(from, to);
+
+        // Готовим список рядов (rows) для InlineKeyboard
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        // 1) Кнопки специальностей
+        for (Specialty specialty : pageItems) {
+            // например: REVIEW_SPECIALTY_XXX
+            String callbackData = "REVIEW_SPECIALTY_" + specialty.getId();
+            InlineKeyboardButton button = InlineKeyboardButton.builder()
+                    .text(specialty.getSpecialty())
+                    .callbackData(callbackData)
+                    .build();
+            rows.add(Collections.singletonList(button));
+        }
+
+        // 2) Кнопки "Назад" / "Вперёд"
+        List<InlineKeyboardButton> navRow = new ArrayList<>();
+        if (pageIndex > 0) {
+            navRow.add(InlineKeyboardButton.builder()
+                    .text("← Назад")
+                    // при нажатии придёт REVIEW_PAGE_(pageIndex - 1)
+                    .callbackData("REVIEW_PAGE_" + (pageIndex - 1))
+                    .build());
+        }
+        if (pageIndex < totalPages - 1) {
+            navRow.add(InlineKeyboardButton.builder()
+                    .text("Вперёд →")
+                    .callbackData("REVIEW_PAGE_" + (pageIndex + 1))
+                    .build());
+        }
+        if (!navRow.isEmpty()) {
+            rows.add(navRow);
+        }
+
+        // Создаём саму клавиатуру
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        keyboard.setKeyboard(rows);
+        return keyboard;
+    }
+    private void sendSpecialtyListForReadingReviews(Long userId) {
+        // отправляем новое сообщение, страница 0
+        SendMessage message = new SendMessage();
+        message.setChatId(userId);
+        message.setText("Специальности (страница 1 / X). Выберите, о какой посмотреть отзывы:");
+
+        InlineKeyboardMarkup keyboard = buildReadReviewsKeyboardPage(0);
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private InlineKeyboardMarkup buildReadReviewsKeyboardPage(int pageIndex) {
+        int total = specialties.size();
+        int totalPages = (int) Math.ceil(total / (double) PAGE_SIZE);
+
+        // Корректируем pageIndex, если вышли за границы
+        if (pageIndex < 0) pageIndex = 0;
+        if (pageIndex >= totalPages) pageIndex = totalPages - 1;
+
+        int from = pageIndex * PAGE_SIZE;
+        int to = Math.min(from + PAGE_SIZE, total);
+        List<Specialty> pageItems = specialties.subList(from, to);
+
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        // 1) Кнопки специальностей для чтения отзывов
+        for (Specialty specialty : pageItems) {
+            String callbackData = "READ_REVIEWS_" + specialty.getId();
+            InlineKeyboardButton button = InlineKeyboardButton.builder()
+                    .text(specialty.getSpecialty())
+                    .callbackData(callbackData)
+                    .build();
+            rows.add(Collections.singletonList(button));
+        }
+
+        // 2) Навигационные кнопки
+        List<InlineKeyboardButton> navRow = new ArrayList<>();
+        if (pageIndex > 0) {
+            navRow.add(InlineKeyboardButton.builder()
+                    .text("← Назад")
+                    .callbackData("READREV_PAGE_" + (pageIndex - 1))
+                    .build());
+        }
+        if (pageIndex < totalPages - 1) {
+            navRow.add(InlineKeyboardButton.builder()
+                    .text("Вперёд →")
+                    .callbackData("READREV_PAGE_" + (pageIndex + 1))
+                    .build());
+        }
+        if (!navRow.isEmpty()) {
+            rows.add(navRow);
+        }
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        keyboard.setKeyboard(rows);
+        return keyboard;
+    }
+
     private void handleCallback(CallbackQuery callbackQuery) {
         Long userId = callbackQuery.getMessage().getChatId();
         Integer messageId = callbackQuery.getMessage().getMessageId();
         String data = callbackQuery.getData();
+        // Если пользователь нажал "💬 Отзывы"
+        if (data.equals("REVIEWS_MENU")) {
+            sendReviewsMenu(userId);
+            return;
+        }
+        if (data.startsWith("REVIEW_PAGE_")) {
+            int pageIndex = Integer.parseInt(data.substring("REVIEW_PAGE_".length()));
+
+            // соберём новый текст и новую клавиатуру
+            int total = specialties.size();
+            int totalPages = (int) Math.ceil(total / (double) PAGE_SIZE);
+            // Корректируем pageIndex, чтобы не вылететь
+            if (pageIndex < 0) pageIndex = 0;
+            if (pageIndex > totalPages - 1) pageIndex = totalPages - 1;
+
+            // Формируем текст
+            String newText = String.format(
+                    "Специальности (страница %d / %d):\n" +
+                            "Выберите специальность, о которой хотите оставить отзыв:",
+                    pageIndex + 1, totalPages
+            );
+
+            // Будет новая клавиатура
+            InlineKeyboardMarkup newKeyboard = buildReviewKeyboardPage(userId, pageIndex);
+
+            // Редактируем **существующее** сообщение, используя EditMessageText
+            EditMessageText edit = new EditMessageText();
+            edit.setChatId(userId.toString());
+            edit.setMessageId(messageId);  // тот же ID, что в callback
+            edit.setText(newText);
+            edit.setReplyMarkup(newKeyboard);
+
+            try {
+                execute(edit);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return;
+        }
+        if (data.startsWith("REVIEW_SPECIALTY_")) {
+            String specialtyId = data.substring("REVIEW_SPECIALTY_".length());
+            String specialtyName = getSpecialtyNameById(specialtyId);
+
+            // Запоминаем, что этот пользователь выбрал specialtyId
+            userReviewSpecialty.put(userId, specialtyId);
+
+            // Ставим стадию: ждём рейтинг
+            userReviewStage.put(userId, "AWAITING_RATING");
+
+            // Просим ввести рейтинг от 1 до 5
+            sendMessage(userId, "Вы выбрали специальность: " + specialtyName +
+                    "\nПожалуйста, введите вашу ОЦЕНКУ (число от 1 до 5).");
+            return;
+        }
+
+
+        if (data.startsWith("READREV_PAGE_")) {
+            int pageIndex = Integer.parseInt(data.substring("READREV_PAGE_".length()));
+            int total = specialties.size();
+            int totalPages = (int) Math.ceil(total / (double) PAGE_SIZE);
+
+            if (pageIndex < 0) pageIndex = 0;
+            if (pageIndex >= totalPages) pageIndex = totalPages - 1;
+
+            String newText = String.format(
+                    "Специальности (страница %d / %d). Выберите, о какой посмотреть отзывы:",
+                    pageIndex + 1,
+                    totalPages
+            );
+            InlineKeyboardMarkup newKeyboard = buildReadReviewsKeyboardPage(pageIndex);
+
+            // Уже есть userId и messageId
+            EditMessageText edit = new EditMessageText();
+            edit.setChatId(userId.toString());
+            edit.setMessageId(messageId);
+            edit.setText(newText);
+            edit.setReplyMarkup(newKeyboard);
+
+            try {
+                execute(edit);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return;
+        }
+        if (data.startsWith("READ_REVIEWS_")) {
+            String specialtyId = data.substring("READ_REVIEWS_".length());
+            showReviewsForSpecialty(userId, specialtyId);
+            return;
+        }
+
+        // Например, если пользователь нажал "Оставить отзыв" в меню отзывов
+        if (data.equals("LEAVE_REVIEW")) {
+            // Переходим к логике выбора специальности для отзыва
+            sendSpecialtyListForReview(userId);
+            return;
+        }
+
+        // Если пользователь нажал "Посмотреть отзывы"
+        if (data.equals("READ_REVIEWS")) {
+            // Переходим к логике просмотра отзывов
+            sendSpecialtyListForReadingReviews(userId);
+            return;
+        }
         if (data.equals("NOTIFY_SETUP")) {
             handleNotificationSetup(userId, "/notifications");
         }
@@ -246,6 +558,39 @@ public class UniversityBot extends TelegramLongPollingBot {
             start = end;
         }
     }
+    private void sendReviewsMenu(Long userId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(userId);
+        message.setText("Отзывы: выберите действие");
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        // Кнопка «Оставить отзыв»
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("Оставить отзыв")
+                        .callbackData("LEAVE_REVIEW")
+                        .build()
+        ));
+
+        // Кнопка «Посмотреть отзывы»
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("Посмотреть отзывы")
+                        .callbackData("READ_REVIEWS")
+                        .build()
+        ));
+
+        keyboard.setKeyboard(rows);
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     private void sendSafeMessage(Long chatId, String message) {
@@ -254,6 +599,30 @@ public class UniversityBot extends TelegramLongPollingBot {
         } else {
             sendMessage(chatId, message);
         }
+    }
+
+    private void showReviewsForSpecialty(Long userId, String specialtyId) {
+        String specialtyName = getSpecialtyNameById(specialtyId);
+        List<Review> reviews = reviewsBySpecialty.getOrDefault(specialtyId, new ArrayList<>());
+
+        if (reviews.isEmpty()) {
+            sendMessage(userId, "Пока никто не оставил отзыв о «" + specialtyName + "».");
+            return;
+        }
+
+        // Формируем текст. Если отзывов много, возможно разбивать на несколько сообщений.
+        StringBuilder sb = new StringBuilder();
+        sb.append("Отзывы о «").append(specialtyName).append("»:\n\n");
+        int counter = 1;
+        for (Review review : reviews) {
+            sb.append(counter++).append(") ");
+            // Если нужен рейтинг:
+            sb.append("Рейтинг: ").append(review.getRating()).append("\n");
+            sb.append("Пользователь: ").append(review.getUserId()).append("\n");
+            sb.append("Отзыв: ").append(review.getText()).append("\n\n");
+        }
+
+        sendSafeMessage(userId, sb.toString());
     }
 
 
@@ -390,7 +759,7 @@ public class UniversityBot extends TelegramLongPollingBot {
                 InlineKeyboardButton.builder().text("Места по договорам").callbackData("QUOTA_Места по договорам").build()
         ));
 
-        // Новая кнопка для уведомлений
+        // Кнопка "🔔 Настроить уведомления"
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
                         .text("🔔 Настроить уведомления")
@@ -398,8 +767,15 @@ public class UniversityBot extends TelegramLongPollingBot {
                         .build()
         ));
 
-        keyboard.setKeyboard(buttons);
-        sendMessage.setReplyMarkup(keyboard);
+        // КНОПКА ОТЗЫВОВ
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("💬 Отзывы")   // текст, который увидит пользователь
+                        .callbackData("REVIEWS_MENU") // callback, обрабатываемый handleCallback
+                        .build()
+        ));
+
+        // Если пользователь — админ, показываем и кнопку "Админ-панель"
         if (adminIds.contains(chatId)) {
             buttons.add(Collections.singletonList(
                     InlineKeyboardButton.builder()
@@ -418,6 +794,7 @@ public class UniversityBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 
 
     private void sendSubjectSelectionMessage(Long chatId, Integer messageId) {
@@ -717,7 +1094,14 @@ public class UniversityBot extends TelegramLongPollingBot {
             }
         }
     }
-
+    private String getSpecialtyNameById(String specialtyId) {
+        for (Specialty s : specialties) {
+            if (s.getId() != null && s.getId().equals(specialtyId)) {
+                return s.getSpecialty(); // Возвращаем "полное название"
+            }
+        }
+        return specialtyId; // Если почему-то не нашли, вернём сам ID
+    }
 
     @Override
     public String getBotUsername() {
@@ -726,6 +1110,6 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7642404481:AAERLpTO7CG1tobYNO_5lNbAEWEyga8LZXs";
+        return "7890486634:AAHu9jPl3dzol9oaqbCbCv0Kmd8LS2p5Y9Y";
     }
 }
