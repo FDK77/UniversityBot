@@ -382,6 +382,20 @@ public class UniversityBot extends TelegramLongPollingBot {
         Long userId = callbackQuery.getMessage().getChatId();
         Integer messageId = callbackQuery.getMessage().getMessageId();
         String data = callbackQuery.getData();
+
+        // Обработка новых callback'ов для работы со списком специальностей
+        if (data.equals("SPECIALTIES_LIST")) {
+            sendSpecialtiesList(userId, 0);
+            return;
+        } else if (data.startsWith("SPECIALTIES_PAGE_")) {
+            int page = Integer.parseInt(data.substring("SPECIALTIES_PAGE_".length()));
+            sendSpecialtiesList(userId, page);
+            return;
+        } else if (data.startsWith("SPECIALTY_DETAIL_")) {
+            String specialtyId = data.substring("SPECIALTY_DETAIL_".length());
+            showSpecialtyDetail(userId, specialtyId);
+            return;
+        }
         if (data.equals("REVIEWS_MENU")) {
             sendReviewsMenu(userId);
             return;
@@ -771,8 +785,6 @@ public class UniversityBot extends TelegramLongPollingBot {
         }
     }
 
-
-
     private void sendQuotaSelectionMessage(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -804,6 +816,12 @@ public class UniversityBot extends TelegramLongPollingBot {
                         .callbackData("REVIEWS_MENU")
                         .build()
         ));
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("📋 Описание специальностей")
+                        .callbackData("SPECIALTIES_LIST")
+                        .build()
+        ));
 
         // Третья группа - админ-панель (только для админов)
         if (adminIds.contains(chatId)) {
@@ -824,6 +842,131 @@ public class UniversityBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
+    // Добавляем новый метод для отображения списка специальностей
+    private void sendSpecialtiesList(Long chatId, int page) {
+        int totalPages = (int) Math.ceil((double) specialties.size() / PAGE_SIZE);
+        page = Math.max(0, Math.min(page, totalPages - 1));
+
+        int from = page * PAGE_SIZE;
+        int to = Math.min(from + PAGE_SIZE, specialties.size());
+        List<Specialty> pageSpecialties = specialties.subList(from, to);
+
+        StringBuilder messageText = new StringBuilder();
+        messageText.append("📋 Список специальностей (страница ").append(page + 1).append(" из ").append(totalPages).append("):\n\n");
+
+        for (int i = 0; i < pageSpecialties.size(); i++) {
+            Specialty s = pageSpecialties.get(i);
+            messageText.append(i + 1).append(". ").append(s.getDirection()).append(" - ").append(s.getSpecialty()).append("\n");
+        }
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        // Кнопки для выбора специальности
+        for (int i = 0; i < pageSpecialties.size(); i++) {
+            Specialty s = pageSpecialties.get(i);
+            rows.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text((i + 1) + ". " + s.getDirection())
+                            .callbackData("SPECIALTY_DETAIL_" + s.getId())
+                            .build()
+            ));
+        }
+
+        // Кнопки навигации
+        List<InlineKeyboardButton> navButtons = new ArrayList<>();
+        if (page > 0) {
+            navButtons.add(InlineKeyboardButton.builder()
+                    .text("◀️ Назад")
+                    .callbackData("SPECIALTIES_PAGE_" + (page - 1))
+                    .build());
+        }
+        if (page < totalPages - 1) {
+            navButtons.add(InlineKeyboardButton.builder()
+                    .text("Вперёд ▶️")
+                    .callbackData("SPECIALTIES_PAGE_" + (page + 1))
+                    .build());
+        }
+        if (!navButtons.isEmpty()) {
+            rows.add(navButtons);
+        }
+
+        // Кнопка возврата в главное меню
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("🔙 В главное меню")
+                        .callbackData("BACK_TO_MAIN")
+                        .build()
+        ));
+
+        keyboard.setKeyboard(rows);
+
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(messageText.toString());
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Метод для отображения детальной информации о специальности
+    private void showSpecialtyDetail(Long chatId, String specialtyId) {
+        Specialty specialty = specialties.stream()
+                .filter(s -> s.getId().equals(specialtyId))
+                .findFirst()
+                .orElse(null);
+
+        if (specialty == null) {
+            sendMessage(chatId, "Специальность не найдена.");
+            return;
+        }
+
+        String messageText = "📌 Информация о специальности:\n\n" +
+                "🔹 Код: " + specialty.getDirection() + "\n" +
+                "🔹 Название: " + specialty.getSpecialty() + "\n" +
+                "🔹 Форма обучения: " + specialty.getStudyForm() + "\n" +
+                "🔹 Описание: " + specialty.getDescription() + "\n\n" +
+                "📚 Профили:\n" + String.join("\n", specialty.getProfiles());
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        // Кнопка возврата к списку
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("🔙 К списку специальностей")
+                        .callbackData("SPECIALTIES_LIST")
+                        .build()
+        ));
+
+        // Кнопка возврата в главное меню
+        rows.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("🔙 В главное меню")
+                        .callbackData("BACK_TO_MAIN")
+                        .build()
+        ));
+
+        keyboard.setKeyboard(rows);
+
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(messageText);
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void showQuotaSelection(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
