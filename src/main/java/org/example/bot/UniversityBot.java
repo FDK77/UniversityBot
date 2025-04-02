@@ -34,6 +34,7 @@ public class UniversityBot extends TelegramLongPollingBot {
 
     // Если хотим оценку (рейтинги), можно добавить еще один map для временного хранения рейтинга
     private final Map<Long, Integer> userReviewRating = new HashMap<>();
+    private static final String CONTACTS_CALLBACK = "CONTACTS";
     private final Map<Long, List<String>> userSubjects = new HashMap<>(); // Выбранные предметы
     private final Map<Long, List<String>> userAllSubjects = new HashMap<>();
 
@@ -477,8 +478,20 @@ public class UniversityBot extends TelegramLongPollingBot {
             sendSpecialtyListForReadingReviews(userId);
             return;
         }
+        if (data.equals("SHOW_QUOTAS")) {
+            showQuotaSelection(userId);
+        }
+        if (data.equals("CONTACTS")) {
+            showContactsMenu(userId);
+        }
+        else if (data.equals("BACK_TO_MAIN")) {
+            sendQuotaSelectionMessage(userId);
+        }
         if (data.equals("NOTIFY_SETUP")) {
             handleNotificationSetup(userId, "/notifications");
+        }
+        if (data.equals("BACK_TO_START")) {
+            sendQuotaSelectionMessage(userId);
         }
         if (data.equals("ADMIN_PANEL")) {
             if (adminIds.contains(userId)) {
@@ -740,6 +753,53 @@ public class UniversityBot extends TelegramLongPollingBot {
     private void sendQuotaSelectionMessage(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
+        sendMessage.setText("Главное меню:");
+
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+        // Первая группа - выбор квоты
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("🎓 Выбрать квоту")
+                        .callbackData("SHOW_QUOTAS")
+                        .build()
+        ));
+
+        // Вторая группа - сервисные кнопки
+        buttons.add(Arrays.asList(
+                InlineKeyboardButton.builder()
+                        .text("🔔 Уведомления")
+                        .callbackData("NOTIFY_SETUP")
+                        .build(),
+                InlineKeyboardButton.builder()
+                        .text("📞 Контакты")
+                        .callbackData("CONTACTS")
+                        .build()
+        ));
+
+        // Третья группа - админ-панель (только для админов)
+        if (adminIds.contains(chatId)) {
+            buttons.add(Collections.singletonList(
+                    InlineKeyboardButton.builder()
+                            .text("👨‍💻 Админ-панель")
+                            .callbackData("ADMIN_PANEL")
+                            .build()
+            ));
+        }
+
+        keyboard.setKeyboard(buttons);
+        sendMessage.setReplyMarkup(keyboard);
+
+        try {
+            execute(sendMessage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void showQuotaSelection(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
         sendMessage.setText("Выберите квоту:");
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
@@ -760,10 +820,11 @@ public class UniversityBot extends TelegramLongPollingBot {
         ));
 
         // Кнопка "🔔 Настроить уведомления"
+        // Кнопка "Назад"
         buttons.add(Collections.singletonList(
                 InlineKeyboardButton.builder()
-                        .text("🔔 Настроить уведомления")
-                        .callbackData("NOTIFY_SETUP")
+                        .text("◀️ Назад")
+                        .callbackData("BACK_TO_MAIN")
                         .build()
         ));
 
@@ -776,20 +837,38 @@ public class UniversityBot extends TelegramLongPollingBot {
         ));
 
         // Если пользователь — админ, показываем и кнопку "Админ-панель"
-        if (adminIds.contains(chatId)) {
-            buttons.add(Collections.singletonList(
-                    InlineKeyboardButton.builder()
-                            .text("👨‍💻 Админ-панель")
-                            .callbackData("ADMIN_PANEL")
-                            .build()
-            ));
-        }
-
-        keyboard.setKeyboard(buttons);
-        sendMessage.setReplyMarkup(keyboard);
 
         try {
             execute(sendMessage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void showContactsMenu(Long chatId) {
+        // Здесь можно позже добавить любой текст контактов
+        String contactsText = "📌 Контактная информация:\n\n" +
+                "📞 Телефон: +7 495 260-23-32\n" +
+                "📧 Email: pk@rut-miit.ru\n" +
+                "🌐 Сайт: https://www.miit.ru/admissions/office\n\n" +
+                "📍 Адрес: г. Москва, ул. Образцова, д. 9, стр. 9";
+
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(contactsText);
+
+        // Добавляем кнопку "Назад"
+        InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> buttons = Collections.singletonList(
+                InlineKeyboardButton.builder()
+                        .text("◀️ Назад")
+                        .callbackData("BACK_TO_START")
+                        .build()
+        );
+        keyboard.setKeyboard(Collections.singletonList(buttons));
+        message.setReplyMarkup(keyboard);
+
+        try {
+            execute(message);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -965,14 +1044,20 @@ public class UniversityBot extends TelegramLongPollingBot {
     private void sendRestartButton(Long userId) {
         SendMessage message = new SendMessage();
         message.setChatId(userId);
-        message.setText("🔄 Хотите попробовать снова?");
+        message.setText("🔄 Хотите попробовать снова или посмотреть контакты?");
         message.enableMarkdown(true);
 
         InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
-        List<InlineKeyboardButton> buttons = Collections.singletonList(
-                InlineKeyboardButton.builder().text("Начать заново").callbackData("RESET").build()
-        );
-        keyboard.setKeyboard(Collections.singletonList(buttons));
+        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder().text("🔄 Начать заново").callbackData("RESET").build()
+        ));
+        buttons.add(Collections.singletonList(
+                InlineKeyboardButton.builder().text("📞 Контакты").callbackData(CONTACTS_CALLBACK).build()
+        ));
+
+        keyboard.setKeyboard(buttons);
         message.setReplyMarkup(keyboard);
 
         try {
