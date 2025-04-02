@@ -339,13 +339,21 @@ public class UniversityBot extends TelegramLongPollingBot {
 
         // 1) Кнопки специальностей для чтения отзывов
         for (Specialty specialty : pageItems) {
+            Double avgRating = getAverageRating(specialty.getId());
+            String ratingText = (avgRating != null)
+                    ? String.format(" (%.1f/5 ★)", avgRating)
+                    : "";
+            String buttonLabel = specialty.getSpecialty() + ratingText;
+
             String callbackData = "READ_REVIEWS_" + specialty.getId();
+
             InlineKeyboardButton button = InlineKeyboardButton.builder()
-                    .text(specialty.getSpecialty())
+                    .text(buttonLabel)
                     .callbackData(callbackData)
                     .build();
             rows.add(Collections.singletonList(button));
         }
+
 
         // 2) Навигационные кнопки
         List<InlineKeyboardButton> navRow = new ArrayList<>();
@@ -630,23 +638,30 @@ public class UniversityBot extends TelegramLongPollingBot {
             return;
         }
 
-        // Формируем текст. Если отзывов много, возможно разбивать на несколько сообщений.
         StringBuilder sb = new StringBuilder();
-        sb.append("Отзывы о «").append(specialtyName).append("»:\n\n");
+        sb.append("👁‍🗨 Отзывы о «").append(specialtyName).append("»:\n\n");
+
+        // Добавляем среднюю оценку:
+        Double avgRating = getAverageRating(specialtyId);
+        if (avgRating != null) {
+            sb.append("⭐ Средняя оценка: ")
+                    .append(String.format("%.1f", avgRating))
+                    .append("/5\n\n");  // Ещё можно добавить эмодзи
+        }
+
         int counter = 1;
         for (Review review : reviews) {
-            sb.append(counter++).append(") ");
-            // Если нужен рейтинг:
-            sb.append("Рейтинг: ").append(review.getRating()).append("\n");
-            sb.append("Пользователь: ").append(review.getUserId()).append("\n");
-            sb.append("Отзыв: ").append(review.getText()).append("\n\n");
+            sb.append("— — — — — — —\n");
+            sb.append("[").append(counter++).append("]\n");
+            sb.append("Оценка: ").append(review.getRating()).append("/5\n");
+            // Если хотите больше смайликов
+            sb.append("✍ Отзыв: ").append(review.getText()).append("\n\n");
         }
 
         sendSafeMessage(userId, sb.toString());
         sendQuotaSelectionMessage(userId);
-
-
     }
+
 
 
     private InlineKeyboardMarkup generateGroupSelectionKeyboard(Long userId) {
@@ -1184,6 +1199,17 @@ public class UniversityBot extends TelegramLongPollingBot {
                 sendMessage(userId, notificationText);
             }
         }
+    }
+    private Double getAverageRating(String specialtyId) {
+        List<Review> reviews = reviewsBySpecialty.getOrDefault(specialtyId, new ArrayList<>());
+        if (reviews.isEmpty()) {
+            return null;
+        }
+        double sum = 0;
+        for (Review r : reviews) {
+            sum += r.getRating();
+        }
+        return sum / reviews.size();
     }
     private String getSpecialtyNameById(String specialtyId) {
         for (Specialty s : specialties) {
